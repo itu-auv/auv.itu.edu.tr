@@ -28,4 +28,4 @@ jobs:
     - name: Push to Server
       run: |
         git remote add live ssh://auv@ssh.itu.edu.tr/itu/users/auv/repos/auv.itu.edu.tr.git;
-        git push live main
+        git push live main -f
