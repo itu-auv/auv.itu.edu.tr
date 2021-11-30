@@ -27,5 +27,6 @@ jobs:
     - uses: actions/checkout@v2
     - name: Push to Server
       run: |
-        git remote add live ssh://auv@ssh.itu.edu.tr/itu/users/auv/repos/auv.itu.edu.tr.git;
-        git push live main -f
+        rsync * auv@ssh.itu.edu.tr:/itu/users/auv/auv.itu.edu.tr/public_html/
+      # git remote add live ssh://auv@ssh.itu.edu.tr/itu/users/auv/repos/auv.itu.edu.tr.git;
+      # git push live main -f
