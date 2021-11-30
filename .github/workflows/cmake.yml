@@ -1,0 +1,31 @@
+name: Deploy to Host
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+
+env:
+  # Customize the CMake build type here (Release, Debug, RelWithDebInfo, etc.)
+  BUILD_TYPE: Release
+  LIVE_HOST: ssh.itu.edu.tr
+  LIVE_USERNAME: auv
+  
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+    - name: Install SSH Key
+      uses: shimataro/ssh-key-action@v2
+      with:
+        key: ${{ secrets.SSH_PRIVATE_KEY }} 
+        known_hosts: 'none'
+    - name: Adding Known Hosts
+      run: ssh-keyscan -H ${{ env.LIVE_HOST }} >> ~/.ssh/known_hosts
+    - uses: actions/checkout@v2
+    - name: Push to Server
+      run: |
+        git remote add live ssh://auv@ssh.itu.edu.tr/itu/users/auv/repos/auv.itu.edu.tr.git;
+        git push live main
