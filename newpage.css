@@ -34,11 +34,21 @@ CSS INDEX
 24. Responsive Google Map
 -----------------------------------------------------------------------------------*/
 
+:root {
+    --auv-dark-black: #000000;
+    --auv-dark-1: #161616;
+    --auv-dark-2: #252525;
+    --auv-dark-3: #333333;
+    --auv-dark-4: #4d4d4d;
+  }
+
+
 /*-----------------
 1. Google font
 ------------------*/
 
 @import url('https://fonts.googleapis.com/css?family=Open+Sans:300,400,400i,600,700,800');
+
 
 /*-------------------
 2. Theme Default CSS
@@ -101,6 +111,7 @@ body {
 
 body {
     font-family: 'Open Sans', sans-serif;
+    font-family: 'Lato', sans-serif;
     font-weight: 400;
     font-size: 16px;
     line-height: 32px;
@@ -191,10 +202,10 @@ input:-webkit-autofill:focus {
 .bttn-default {
     padding: 12px 40px;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#482cbf+0,6ac6f0+100 */
-    background: #44c1c1;
-    background: -webkit-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%);
-    background: -o-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%);
-    background: linear-gradient(45deg, #44c1c1 0%, #0d2626 100%);
+    background: var(--auv-dark-4);
+    /* background: -webkit-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%); */
+    /* background: -o-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%); */
+    /* background: linear-gradient(45deg, #44c1c1 0%, #0d2626 100%); */
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#482cbf', endColorstr='#6ac6f0', GradientType=1);
     color: #ffffff;
@@ -218,10 +229,10 @@ input:-webkit-autofill:focus {
     border-radius: 40px;
     padding: 12px 20px;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#482cbf+0,6ac6f0+100 */
-    background: #44c1c1;
-    background: -webkit-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%);
-    background: -o-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%);
-    background: linear-gradient(45deg, #44c1c1 0%, #0d2626 100%);
+    background: var(--auv-dark-4);
+    /* background: -webkit-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%); */
+    /* background: -o-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%); */
+    /* background: linear-gradient(45deg, #44c1c1 0%, #0d2626 100%); */
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#482cbf', endColorstr='#6ac6f0', GradientType=1);
     color: #ffffff;
@@ -234,8 +245,8 @@ input:-webkit-autofill:focus {
 
 .bttn-members:hover {
     color: #ffffff;
-    -webkit-box-shadow: 0 25px 50px -20px rgba(192, 189, 189, 0.356);
-    box-shadow: 0 25px 50px -20px rgba(192, 189, 189, 0.356);
+    -webkit-box-shadow: 0 25px 50px -20px var(--auv-dark-black);
+    box-shadow: 0 25px 50px -20px var(--auv-dark-black);
     -webkit-transform: translateY(-5px);
     -ms-transform: translateY(-5px);
     transform: translateY(-5px);
@@ -346,10 +357,10 @@ input:-webkit-autofill:focus {
     top: 0;
     width: 100%;
     height: 100%;
-    background: #44c1c1;
-    background: -webkit-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%);
-    background: -o-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%);
-    background: linear-gradient(45deg, #44c1c1 0%, #0d2626 100%);
+    background: var(--auv-dark-1);
+    /* background: -webkit-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%); */
+    /* background: -o-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%); */
+    /* background: linear-gradient(45deg, #44c1c1 0%, #0d2626 100%); */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#482cbf', endColorstr='#6ac6f0', GradientType=1);
     z-index: -1;
     opacity: 0;
@@ -556,10 +567,10 @@ input:-webkit-autofill:focus {
     font-size: 20px;
     line-height: 72px;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#482cbf+0,6ac6f0+100 */
-    background: #44c1c1;
-    background: -webkit-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%);
-    background: -o-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%);
-    background: linear-gradient(45deg, #44c1c1 0%, #0d2626 100%);
+    background: var(--auv-dark-4);
+    /* background: -webkit-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%); */
+    /* background: -o-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%); */
+    /* background: linear-gradient(45deg, #44c1c1 0%, #0d2626 100%); */
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#482cbf', endColorstr='#6ac6f0', GradientType=1);
     overflow: hidden;
@@ -568,8 +579,8 @@ input:-webkit-autofill:focus {
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s;
-    -webkit-box-shadow: 0 0 30px 0 rgba(192, 189, 189, 0.356);
-    box-shadow: 0 0 30px 0 rgba(192, 189, 189, 0.356);
+    -webkit-box-shadow: 0 0 20px 0 var(--auv-dark-black);
+    box-shadow: 0 0 20px 0 var(--auv-dark-black);
 }
 
 .team-slide .owl-controls .owl-nav > div:hover,
@@ -612,8 +623,9 @@ input:-webkit-autofill:focus {
 .team-box {
     position: relative;
     padding: 55px 30px 30px 30px;
-    -webkit-box-shadow: 0 0 30px -5px rgba(192, 189, 189, 0.356);
-    box-shadow: 0 0 30px -5px rgba(192, 189, 189, 0.356);
+    background:var(--auv-dark-3);
+    /* -webkit-box-shadow: 0 0 30px -5px rgba(192, 189, 189, 0.356); */
+    /* box-shadow: 0 0 30px -5px rgba(192, 189, 189, 0.356); */
     border-radius: 5px;
     margin-top: 40px;
     -webkit-transition: 0.3s;
@@ -625,8 +637,8 @@ input:-webkit-autofill:focus {
 }
 
 .team-box:hover {
-    -webkit-box-shadow: 0 0 60px 0 rgba(192, 189, 189, 0.356);
-    box-shadow: 0 0 60px 0 rgba(192, 189, 189, 0.356);
+    -webkit-box-shadow: 0 0 20px 0 var(--auv-dark-black);
+    box-shadow: 0 0 20px 0 var(--auv-dark-black);
 }
 
 .team-box .team-image {
@@ -639,8 +651,8 @@ input:-webkit-autofill:focus {
     text-align: center;
     overflow: hidden;
     border: 5px solid #ffffff;
-    -webkit-box-shadow: 0 0 10px 0 rgba(192, 189, 189, 0.356);
-    box-shadow: 0 0 10px 0 rgba(192, 189, 189, 0.356);
+    -webkit-box-shadow: 0 0 10px 0 var(--auv-dark-black);
+    box-shadow: 0 0 10px 0 var(--auv-dark-black);
 }
 
 .team-box h4 {
@@ -674,10 +686,10 @@ input:-webkit-autofill:focus {
 
 .gallery-area {
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#482cbf+0,6ac6f0+100 */
-    background: #44c1c1;
-    background: -webkit-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%);
-    background: -o-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%);
-    background: linear-gradient(45deg, #44c1c1 0%, #0d2626 100%);
+    background: var(--auv-dark-1);
+    /* background: -webkit-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%); */
+    /* background: -o-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%); */
+    /* background: linear-gradient(45deg, #44c1c1 0%, #0d2626 100%); */
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#482cbf', endColorstr='#6ac6f0', GradientType=1);
     /* IE6-9 fallback on horizontal gradient */
@@ -765,8 +777,8 @@ input:-webkit-autofill:focus {
     overflow: hidden;
     text-align: center;
     color: #ffffff;
-    -webkit-box-shadow: 0 0 15px -5px rgba(192, 189, 189, 0.356);
-    box-shadow: 0 0 15px -5px rgba(192, 189, 189, 0.356);
+    -webkit-box-shadow: 0 0 15px -5px var(--auv-dark-black);
+    box-shadow: 0 0 15px -5px var(--auv-dark-black);
     -webkit-transition: 0.3s;
     -o-transition: 0.3s;
     transition: 0.3s;
@@ -876,10 +888,10 @@ input:-webkit-autofill:focus {
 /*-- 16. Questions-area --*/
 
 .questions-area {
-    background: #44c1c1;
-    background: -webkit-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%);
-    background: -o-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%);
-    background: linear-gradient(45deg, #44c1c1 0%, #0d2626 100%);
+    background: var(--auv-dark-1);
+    /* background: -webkit-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%); */
+    /* background: -o-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%); */
+    /* background: linear-gradient(45deg, #44c1c1 0%, #0d2626 100%); */
 }
 
 .toggole-boxs {
@@ -978,10 +990,10 @@ input:-webkit-autofill:focus {
     color: #ffffff;
     font-size: 20px;
     /* Permalink - use to edit and share this gradient: http://colorzilla.com/gradient-editor/#482cbf+0,6ac6f0+100 */
-    background: #44c1c1;
-    background: -webkit-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%);
-    background: -o-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%);
-    background: linear-gradient(45deg, #44c1c1 0%, #0d2626 100%);
+    background: var(--auv-dark-4);
+    /* background: -webkit-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%); */
+    /* background: -o-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%); */
+    /* background: linear-gradient(45deg, #44c1c1 0%, #0d2626 100%); */
     /* W3C, IE10+, FF16+, Chrome26+, Opera12+, Safari7+ */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#482cbf', endColorstr='#6ac6f0', GradientType=1);
     border-radius: 100%;
@@ -1017,8 +1029,8 @@ input:-webkit-autofill:focus {
 
 .footer-bottom {
     padding: 20px 0;
-    background-color: #0d2626;
-    border-top: 1px solid #506e6e;
+    background-color: var(--auv-dark-1);
+    border-top: 1px solid var(--auv-dark-2);
 }
 
 .footer-bottom .footer-menu ul {
@@ -1055,7 +1067,7 @@ input:-webkit-autofill:focus {
 }
 
 .preloader {
-    background-color: #ffffff;
+    background-color: var(--auv-dark-1);
     bottom: 0;
     height: 100%;
     position: fixed;
@@ -1065,10 +1077,10 @@ input:-webkit-autofill:focus {
 }
 
 .preloader span {
-    background: #44c1c1;
-    background: -webkit-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%);
-    background: -o-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%);
-    background: linear-gradient(45deg, #44c1c1 0%, #0d2626 100%);
+    background: var(--auv-dark-1);
+    /* background: -webkit-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%); */
+    /* background: -o-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%); */
+    /* background: linear-gradient(45deg, #44c1c1 0%, #0d2626 100%); */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#482cbf', endColorstr='#6ac6f0', GradientType=1);
     border-radius: 100%;
     height: 60px;
@@ -1136,10 +1148,10 @@ input:-webkit-autofill:focus {
 /*-- 20. Blog-Post --*/
 
 .site-header {
-    background: #44c1c1;
-    background: -webkit-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%);
-    background: -o-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%);
-    background: linear-gradient(45deg, #44c1c1 0%, #0d2626 100%);
+    background: var(--auv-dark-1);
+    /* background: -webkit-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%); */
+    /* background: -o-linear-gradient(45deg, #44c1c1 0%, #0d2626 100%); */
+    /* background: linear-gradient(45deg, #44c1c1 0%, #0d2626 100%); */
     filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#482cbf', endColorstr='#6ac6f0', GradientType=1);
     color: #ffffff;
     padding: 180px 0 120px;
@@ -1166,8 +1178,8 @@ input:-webkit-autofill:focus {
 .post-single {
     padding: 30px;
     border-radius: 3px;
-    -webkit-box-shadow: 0 0 20px 0 rgba(192, 189, 189, 0.356);
-    box-shadow: 0 0 20px 0 rgba(192, 189, 189, 0.356);
+    -webkit-box-shadow: 0 0 20px 0 var(--auv-dark-black);
+    box-shadow: 0 0 20px 0 var(--auv-dark-black);
     margin-bottom: 30px;
 }
 
@@ -1177,8 +1189,8 @@ input:-webkit-autofill:focus {
 }
 
 .single-post .post-single .post-media {
-    -webkit-box-shadow: 0 0 20px 0 rgba(192, 189, 189, 0.356);
-    box-shadow: 0 0 20px 0 rgba(192, 189, 189, 0.356);
+    -webkit-box-shadow: 0 0 20px 0 var(--auv-dark-black);
+    box-shadow: 0 0 20px 0 var(--auv-dark-black);
     padding: 30px;
     margin-bottom: 30px;
 }
@@ -1237,8 +1249,8 @@ input:-webkit-autofill:focus {
 
 .pagination .nav-links {
     padding: 20px;
-    -webkit-box-shadow: 0 0 15px 0 rgba(192, 189, 189, 0.356);
-    box-shadow: 0 0 15px 0 rgba(192, 189, 189, 0.356);
+    -webkit-box-shadow: 0 0 15px 0 var(--auv-dark-black);
+    box-shadow: 0 0 15px 0 var(--auv-dark-black);
     display: inline-block;
 }
 
@@ -1274,8 +1286,8 @@ input:-webkit-autofill:focus {
 .post-single blockquote {
     padding: 50px 160px;
     text-align: center;
-    -webkit-box-shadow: 0 0 15px 0 rgba(192, 189, 189, 0.356);
-    box-shadow: 0 0 15px 0 rgba(192, 189, 189, 0.356);
+    -webkit-box-shadow: 0 0 15px 0 var(--auv-dark-black);
+    box-shadow: 0 0 15px 0 var(--auv-dark-black);
     font-size: 26px;
     line-height: 1.6em;
     border: none;
@@ -1374,5 +1386,5 @@ input:-webkit-autofill:focus {
     position:absolute;
 }
 .pagebackground{
-    background-color: #273535;
+    background-color: var(--auv-dark-2);
 }
