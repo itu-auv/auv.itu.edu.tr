@@ -112,11 +112,14 @@
 	margin-top: 20px;
     margin-right: 25px;
 	padding: 5px !important;
+	padding-top: 4px !important;
+	padding-bottom: 6px !important;
 	background-color: white;
     color: #000000 !important;
     font-weight: 505;
     outline: none;
 	text-decoration: none;
+	border-radius: 4px; 
 }
 
 .navbar .navbar-nav .nav-link:hover,
@@ -141,6 +144,7 @@
         margin-right: 0; /* Remove right margin */
         padding: 15px; /* Adjust padding */
 		width: 90px;
+		
     }
 }
 
