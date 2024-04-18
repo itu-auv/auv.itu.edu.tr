@@ -108,6 +108,20 @@
     outline: none;
 }
 
+.navbar .highlight {
+	margin-top: 20px;
+    margin-right: 25px;
+	padding-top: 5px !important;
+	padding-bottom: 5px !important;
+	padding-right: 5px !important;
+	padding-left: 5px !important;
+	background-color: white;
+    color: #000000 !important;
+    font-weight: 505;
+    outline: none;
+	text-decoration: none;
+}
+
 .navbar .navbar-nav .nav-link:hover,
 .navbar .navbar-nav .nav-link.active {
     color: var(--primary);

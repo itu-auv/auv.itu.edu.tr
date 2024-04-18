@@ -114,3 +114,13 @@
         left: 0%;
     }
 }
+
+.icon-line /* required for reducing the gap between two descriptions in the timeline section */
+	{
+        margin: 0; 
+        padding: 0; 
+    }
+
+    .icon-line p {
+        margin-bottom: 0px; /
+    }
