@@ -198,6 +198,8 @@
                                     class="bi bi-twitter"></i></a>
                             <a class="btn btn-square me-0" href="https://www.linkedin.com/company/itu-auv-team"
                                 target="_blank"><i class="bi bi-linkedin"></i></a>
+<a class="btn btn-square me-0" href="https://github.com/itu-auv"
+                                target="_blank"><i class="bi bi-github"></i></a>
                             <a class="btn btn-square me-0" href="mailto:auv@itu.edu.tr"><i
                                     class="bi bi-envelope-fill"></i></a>
                         </div>

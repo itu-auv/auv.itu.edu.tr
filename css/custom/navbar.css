@@ -49,7 +49,6 @@
 .btn.btn-outline-secondary:hover {
     color: #FFFFFF;
 }
-
 .btn.btn-secondary:hover {
     color: var(--primary);
     background: transparent;
@@ -526,6 +525,44 @@
 .service-item:hover .service-text .btn {
     width: 112px;
 }
+/*** Blog ***/
+.blog-container {
+    display: flex;
+    flex-direction: column;
+    gap: 2vh;
+	padding: 6vh;
+	padding-right: 16vw;
+	padding-left: 16vw;
+}
+
+.blog-entry {
+    background-color: white;
+    color: black;
+    border-radius: 15px;
+    padding: 1vw;
+}
+.blog-entry img {
+    max-width: 24vw; /* Set the desired width of the image */
+    height: auto;
+    border-radius: 1vw;
+}
+.image-left img {
+	flex-direction: row;
+    margin-right: 20px; /* Space between image and text */
+	float: left;
+}
+
+.image-right img {
+	flex-direction: row-reverse;
+    margin-left: 20px; /* Space between text and image */
+	float: right;
+}
+
+.blog-text {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
 
 /*** Team ***/
 .team-item .team-img::before,
@@ -595,4 +632,67 @@ clients
 .clients .swiper-slide img:hover {
     filter: none;
     opacity: 1;
+}
+
+/*** Gallery ***/
+.gallery-container {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
+    gap: 2vw; /* Space between images */
+    padding: 5vh 18vw; /* Space between borders and the left/right-most images */
+}
+
+.gallery-image {
+    width: 100%;
+    height: auto;
+    cursor: pointer;
+    border: 2px solid white; /* White border around each image */
+    border-radius: 16px; /* Rounded corners */
+    transition: transform 0.2s;
+    box-sizing: border-box; /* Ensure border is included in the element's total width and height */
+}
+
+.gallery-image:hover {
+    transform: scale(1.15);
+}
+
+/* Popup styles */
+.image-popup {
+    display: none; /* Hidden by default */
+    position: fixed;
+    z-index: 1;
+    padding-top: 30px;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.75);
+}
+
+.image-popup-content {
+    margin: auto;
+    display: block;
+    width: 90%;
+    max-width: 800px;
+	border: 2px solid white; /* White border around each image */
+    border-radius: 16px; /* Rounded corners */
+}
+
+.image-popup-close {
+    position: absolute;
+    top: 15px;
+    right: 15px;
+    color: #fff;
+    font-size: 40px;
+    font-weight: bold;
+    transition: 0.3s;
+    cursor: pointer;
+}
+
+.close:hover,
+.close:focus {
+    color: #bbb;
+    text-decoration: none;
+    cursor: pointer;
 }
