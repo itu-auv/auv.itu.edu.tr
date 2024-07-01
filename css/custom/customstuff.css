@@ -618,7 +618,8 @@
     }
 	.image-left img {
 		float: none;
-		max-width: 60vw;
+		max-width: 84vw;
+		margin-top: 10px;
 		margin-right: 10px;
 		margin-left: 10px;
 	}
@@ -628,13 +629,20 @@
     }
 	.image-right img {
 		float: none;
-		max-width: 59vw;
+		max-width: 84vw;
+		margin-top: 10px;
 		margin-right: 10px;
 		margin-left: 10px;
 	}
 	.blog-text {
-    text-align: center;
-}
+		text-align: center;
+	}
+	.blog-container {
+		gap: 2vh;
+		padding: 6vh;
+		padding-right: 4vw;
+		padding-left: 4vw;
+	}
 }
 /*** Team ***/
 .team-item .team-img::before,
@@ -771,8 +779,10 @@ clients
 @media (max-width: 1360px) {
     .gallery-container {
         grid-template-columns: repeat(3, 1fr);
+		padding: 5vh 12vw;
     }
 @media (max-width: 991.98px) {
     .gallery-container {
         grid-template-columns: repeat(2, 1fr);
+		padding: 5vh 6vw;
     }
