@@ -85,12 +85,18 @@
                         <li class="nav-item">
                             <a href="arac.html" class="nav-link dropdown-toggle">Araçlar</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="arac.html">Turkuaz</a></li>
                                 <li><a class="dropdown-item" href="arac-taluy.html">Taluy</a></li>
-
+                                <li><a class="dropdown-item" href="arac.html">Turkuaz</a></li>
+                               
                             </ul>
                         </li>
                         <li class="nav-item">
+                            <a href="gallery.html" class="nav-link">Galeri</a>
+                        </li>
+<li class="nav-item">
+                            <a href="blog.html" class="nav-link">Blog</a>
+                        </li>
+<li class="nav-item">
                             <a href="sponsorluk.html" class="nav-link highlight">Sponsorluk</a>
                         </li>
                         <li class="nav-item">
@@ -121,20 +127,72 @@
         <div class="bg-dark" style="width: 100%; height: 125px;"></div>
 <!-- Blog Start -->
         <section class="bg-dark">
+		<h1 class="text-white mb-3 text-center">Blog</h1>
     <div class="blog-container">
-        <div class="blog-entry image-left">
-		<img src="images\allteam.jpg" alt="Blog Image 1">
+	
+	<div class="blog-entry image-right">
+		<img src="images/blog/005.jpg" alt="Blog Image 2">	
 			<div class="blog-text">
-				<h2>Blog Test</h2>
-				<p>Merhaba, sitemize blog ekliyoruz. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+            <h2>Pasif sonar projesi</h2>
+            <p>Bu sene çalışma fırsatını bulduğum en büyük projelerden biri olan pasif sonar projesinden size bahsetmek istiyorum. Aracımızın bu seneki katılacağı Robosub 2024 yarışmasındaki yüzleşeceği en kritik problemlerden biri görev bölgelerinin belli bir frekansta tekrarlı ve kesik bir şekilde sinyal gönderen "pinger" adı verlien cihazlar ile işaretlenmiş olması. Aracımızın bu görevlere ulaşabilmesi için etkili bir şekilde dinleme yaparak ve bu iş için hazırlanmış algoritmasını kullanarak görev yerlerini ayırt edebilmesi gerekiyor.</p>
+			<p>Donanımsal anlamda bu görev için hidrofon denilen su altı mikrofonlarından yararlanıyoruz. Hidrofonlarımızdan aldığımız sinyalleri akustik işleme kartımızdan (APB) geçirerek ve daha sonrasında analog olan sinyalimizi dijital ortama aktararak hazırlanan algoritmamızda işlenebilir hale getiriyoruz. </p>
+			<p>Yazılımsal anlamda ise gelen sinyalin bir sinüs şeklinde olmasından yararlanarak tepe noktaları arasındaki voltaj değerlerini PWM benzeri değerlere bölerek bu değerler arasındaki gelen farklı sinyallerin geliş süreleri ve hidrofonlarımızın geometrik kendi aralarındaki açısal konumlarından yola çıkarak sinyalin geliş süresi ve aracımıza geliş açısını hesaplıyoruz. Bu bilgiyi kullanarak aracımızı sinyal kaynağına yönlendirerek görev bölgemizi bulabiliyoruz.</p>
+			<div class="blog-meta">
+                    <span class="author"><i class="fas fa-user"></i> Yusuf Çalışkan</span>
+                    <span class="date"><i class="fas fa-calendar-alt"></i> 2024-06-14</span>
+                </div>
 			</div>
         </div>
-        <div class="blog-entry image-right">
-		<img src="images\allteam.jpg" alt="Blog Image 2">
-		
+		<div class="blog-entry image-left">
+		<img src="images/blog/004.jpg" alt="Blog Image 2">	
 			<div class="blog-text">
-            <h2>Blog Test 2</h2>
-            <p>Merhaba, sitemize blog ekliyoruz. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <h2>Anakart gömülü yazılımında gelişmeler</h2>
+            <p>Anakartın gömülü yazılımını geliştirme üzerinde çalışıyorum. Aracımız ros ile çalıştığı için anakart
+üzerinde rosserial_arduino paket haberleşmesi kullanıyoruz. Bu paketleyici kütüphane, esasında anakartı sağlayıcı (Host) bilgisayar ile gerçek ros konuşması yaptırmak yerine köprü görevi gören bir python yazılımıyla simüle ettiriyor. </p> <p>
+
+<p>
+Şu anda anakart üzerinden ping sonarlar okunuyor. Ping sonrarları bir ros servisi aracılığıyla açıp kapatabiliyoruz. Ping sonarlar sayesinde su altında 30 derecelik aralıkla karşımızdaki nesnenin bize olan uzaklığını ölçebiliyoruz. Bu verileri matematiksel fonksiyonlara sokarak su altı haritalandırmamızın doğruluğunu arttırıyoruz. </p>
+
+<p>
+Ayrıca anakartımız üzerinden torpido ateşleme sistemini kullanabiliyoruz. Bu özelliği bir rosservis çağırarak kullanıyoruz. Şu anda bir servis çağrıldığında o fonksiyon hariç tüm haberleşmeler fonksiyon işlevini bitirene kadar duruyor. Her ne kadar bu süre yarım saniye gibi kısa da olsa bu sorunun çözümü üzerinde uğraşıyoruz.  </p>
+
+<p>
+Son olarak birçok özelliklerinin dışında anakartımız aslında güç bölücü devrelere sahip olan bir güç dağıtım kartıdır. Bu sayede birçok farklı voltaj seviyesi isteyen sensörlerimizi çalıştırabiliyoruz.</p>
+			<div class="blog-meta">
+                    <span class="author"><i class="fas fa-user"></i> Nihat Arslan</span>
+                    <span class="date"><i class="fas fa-calendar-alt"></i> 2024-05-24</span>
+                </div>
+			</div>
+        </div>
+		
+		<div class="blog-entry image-right">
+		<img src="images/blog/003.jpg" alt="Blog Image 2">	
+			<div class="blog-text">
+            <h2>Robotik Gripper Tasarım Süreci</h2>
+			<p>Merhaba, size gripper tasarım sürecimizden biraz bahsetmek istiyorum. Öncelikle gripper, nesneleri manipüle etmeye ve yerlerini değiştirmeye yarar. Başlayalım...</p>
+            <p>Gripper v1: 
+				İlk tasarımımız, bevel gear içeren bir sistemdi. Bu sistemde, 2 dişli ve bunların arasında pinion dişli bulunuyordu. Tahrik gücü servo motor ile sağlanıyordu. Ancak, 3 boyutlu baskı alındığında pençelerin toleransları ve boyutlarında sorunlar yaşandı. Bu nedenle, tasarımı yeniden gözden geçirmek zorunda kaldık ve 2. versiyona geçtik.</p>
+<p>Gripper v2: 
+İlk versiyona kıyasla, gripper'ın boyutlandırmasını yeniden yaptık ve tasarımı %125 küçülttük. Pençeler arasına 0.3 mm tolerans verildi ve topoloji optimizasyonu yapılarak yanlarda gerekli boşluklar bırakıldı. Ancak, bevel gear sistemi nedeniyle dikey kullanım için uygun olmasına rağmen, servo motorun yer kaplaması nedeniyle aracın alt bölmesine konumlandırmada sorunlar yaşandı. Bu nedenle, yatay kullanım için 3. versiyona geçtik.</p>
+<p>Gripper v3: 
+Yeni bir tasarım stratejisi izleyerek her bir komponenti parametrik ve ayrı ayrı tasarladık. Önceki tasarımda birleşik ve bütün olarak çalışıyorduk, bu da ilerleyen aşamalarda bir şeyi düzeltmeyi zorlaştırıyordu. Bu yeni yaklaşım, tasarımı daha modüler ve esnek hale getirdi.</p>
+<p>Umarım gripper tasarlarken karşılaştığımız zorluklar ve bu zorlukların üstesinden gelme yöntemlerimizi beğenmişsinizdir :) </p>
+			<div class="blog-meta">
+                    <span class="author"><i class="fas fa-user"></i> Taner Özpınar</span>
+                    <span class="date"><i class="fas fa-calendar-alt"></i> 2024-03-29</span>
+                </div>
+			</div>
+        </div>
+        
+        <div class="blog-entry image-left">
+		<img src="images/blog/001.jpg" alt="Blog Image 2">	
+			<div class="blog-text">
+            <h2>Yeni blog sayfası!</h2>
+            <p>Merhaba, sitemize bir blog sayfası eklemeye karar verdik. Burada aracımızın gelişim sürecini sizlerle paylaşacağız. Ne yazık ki dinamik web sayfası kullanmak bizim için bir opsiyon değil, bundan dolayı yeni bir blog yazısı eklemek istediğimizde doğrudan sayfanın kodunu modifiye etmemiz gerekiyor. Gelecekte görüşme dileğiyle :)</p>
+			<div class="blog-meta">
+                    <span class="author"><i class="fas fa-user"></i> Kayra Pamukçu</span>
+                    <span class="date"><i class="fas fa-calendar-alt"></i> 2024-01-05</span>
+                </div>
 			</div>
         </div>
         

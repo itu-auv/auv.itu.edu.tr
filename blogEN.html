@@ -82,11 +82,17 @@
                         <li class="nav-item">
                             <a href="vehicle.html" class="nav-link dropdown-toggle">Vehicles</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="vehicle.html">Turquoise</a></li>
                                 <li><a class="dropdown-item" href="vehicle-taluy.html">Taluy</a></li>
+                                <li><a class="dropdown-item" href="vehicle.html">Turkuaz</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
+                            <a href="galleryEN.html" class="nav-link">Gallery</a>
+                        </li>
+<li class="nav-item">
+                            <a href="blogEN.html" class="nav-link">Blog</a>
+                        </li>
+<li class="nav-item">
                             <a href="sponsorship.html" class="nav-link highlight">Sponsorship</a>
                         </li>
                         <li class="nav-item">
@@ -116,20 +122,71 @@
 
          <!-- Blog Start -->
         <section class="bg-dark">
+		<h1 class="text-white mb-3 text-center">Blog</h1>
     <div class="blog-container">
-        <div class="blog-entry image-left">
-		<img src="images\allteam.jpg" alt="Blog Image 1">
+	
+	<div class="blog-entry image-right">
+		<img src="images/blog/005.jpg" alt="Blog Image 2">	
 			<div class="blog-text">
-				<h2>Blog Test</h2>
-				<p>We are trying a blog out. Lorem ipsum dolor sit amet, consectetur adipiscing elit. </p>
+            <h2>Passive sonar project</h2>
+            <p>I would like to tell you about the passive sonar project, which is one of the biggest projects I had the opportunity to work on this year. One of the most critical problems our vehicle faces in the Robosub 2024 competition it will participate in this year is that the mission areas are marked with devices called "pingers" that send repeated and intermittent signals at a certain frequency. In order for our vehicle to be able to achieve these tasks, it needs to be able to distinguish the mission locations by listening effectively and using the algorithm prepared for this job.</p>
+			<p>In terms of hardware, we use underwater microphones called hydrophones for this task. We pass the signals we receive from our hydrophones through our acoustic processing board (APB) and then transfer our analog signal to the digital environment, making it processable in our prepared algorithm.
+</p>
+			<p>In terms of software, by taking advantage of the fact that the incoming signal is in the form of a sinusoid, we divide the voltage values ​​between the peaks into PWM-like values, and by taking into account the arrival times of the different signals between these values ​​and the geometric angular positions of our hydrophones, we calculate the arrival time of the signal and the angle of arrival to our vehicle. Using this information, we can find our mission area by directing our vehicle to the signal source.</p>
+			<div class="blog-meta">
+                    <span class="author"><i class="fas fa-user"></i> Yusuf Çalışkan</span>
+                    <span class="date"><i class="fas fa-calendar-alt"></i> 2024-06-14</span>
+                </div>
 			</div>
         </div>
-        <div class="blog-entry image-right">
-		<img src="images\allteam.jpg" alt="Blog Image 2">
-		
+		<div class="blog-entry image-left">
+		<img src="images/blog/004.jpg" alt="Blog Image 2">	
 			<div class="blog-text">
-            <h2>Blog Test 2</h2>
-            <p>We are trying a blog out. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+            <h2>Motherboard Firmware Progress</h2>
+            <p>I am working on developing the embedded software for the motherboard. Since our vehicle works with ros, we are using rosserial_arduino packet communication on the motherboard. This library essentially simulates the motherboard with a python software that acts as a bridge instead of having the host computer talk to real ros. </p> 
+<p>
+Currently, ping sonars are read via the motherboard. We can turn ping sonars on and off via a ros service. Thanks to ping sonars, we can measure the distance of objects in front of us to us at 30-degree intervals underwater. We increase the accuracy of our underwater mapping by entering this data into mathematical functions. </p>
+
+<p>
+We can also use the torpedo firing system via our motherboard. We use this feature by calling a rosservice. Right now, when a service is called, all communications except that function stop until the function completes its function. Although this period is as short as half a second, we are working on a solution to this problem.  </p>
+
+<p>
+Finally, apart from its many features, our motherboard is actually a power distribution board with power divider circuits. In this way, we can operate our sensors that require many different voltage levels.</p>
+			<div class="blog-meta">
+                    <span class="author"><i class="fas fa-user"></i> Nihat Arslan</span>
+                    <span class="date"><i class="fas fa-calendar-alt"></i> 2024-05-24</span>
+                </div>
+			</div>
+        </div>
+		
+		<div class="blog-entry image-right">
+		<img src="images/blog/003.jpg" alt="Blog Image 2">	
+			<div class="blog-text">
+            <h2>Robotic Gripper Design Process</h2>
+			<p>Hello, I would like to tell you a little bit about our gripper design process. Before we begin, you should know that the gripper is used to manipulate objects and change their location. Let's start...</p>
+            <p>Our first design was a system with bevel gears. In this system, there were 2 gears and a pinion gear between them. The drive power was provided by a servo motor. However, when the 3D printing was done, there were problems with the tolerances and dimensions of the claws. Therefore, we had to reconsider the design and moved on to version 2.</p>
+<p>Gripper v2: 
+Compared to the first version, we resized the gripper and reduced the design by 125%. A tolerance of 0.3 mm was given between the claws and the necessary gaps were left on the sides by topology optimization. However, although it was suitable for vertical use due to the bevel gear system, there were problems in positioning it in the lower compartment of the vehicle due to the space taken up by the servo motor. Therefore, we moved to version 3 for horizontal use.</p>
+<p>Gripper v3: 
+We followed a new design strategy, designing each component parametrically and separately. In the previous design, we worked as a unified and integrated whole, which made it difficult to fix something in the later stages. This new approach made the design more modular and flexible.</p>
+<p>I hope you liked the challenges we faced while designing the gripper and the ways we overcame them :) </p>
+			<div class="blog-meta">
+                    <span class="author"><i class="fas fa-user"></i> Taner Özpınar</span>
+                    <span class="date"><i class="fas fa-calendar-alt"></i> 2024-03-29</span>
+                </div>
+			</div>
+        </div>
+        
+		
+        <div class="blog-entry image-left">
+		<img src="images/blog/001.jpg" alt="Blog Image 2">	
+			<div class="blog-text">
+            <h2>New blog page!</h2>
+            <p>Hello, we decided to add a blog page to our site. You'll be able to see the development process of our vehicle here. Unfortunately, using a dynamic web page is not an option for us, so whenever we want to add a new blog post, we have to modify the code of the page directly. Hope to see you around in the future :)</p>
+			<div class="blog-meta">
+                    <span class="author"><i class="fas fa-user"></i> Kayra Pamukçu</span>
+                    <span class="date"><i class="fas fa-calendar-alt"></i> 2024-01-05</span>
+                </div>
 			</div>
         </div>
         
