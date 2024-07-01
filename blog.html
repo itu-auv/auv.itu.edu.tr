@@ -9,7 +9,7 @@
 		
         <link rel="stylesheet" href="css/bootstrap.min.css">
 		
-        <link rel="stylesheet" href="css/custom/navbar.css">
+        <link rel="stylesheet" href="css/custom/customstuff.css">
 		
         <link rel="icon" type="image/x-icon" href="images/icon/favicon.ico">
         <!-- Google Web Fonts -->
@@ -72,7 +72,7 @@
                             <a href="index.html" class="nav-link active">Ana Sayfa</a>
                         </li>
                         <li class="nav-item">
-                            <a href="takım.html" class="nav-link dropdown-toggle">Takımımız</a>
+                            <a href="takım.html" class="nav-link dropdown-toggle" id="teamLink">Takımımız</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="takım-elektronik.html">Elektronik</a></li>
                                 <li><a class="dropdown-item" href="takım-yazılım.html">Yazılım</a></li>
@@ -83,7 +83,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="arac.html" class="nav-link dropdown-toggle">Araçlar</a>
+                            <a href="arac.html" class="nav-link dropdown-toggle" id="vehicleLink">Araçlar</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="arac-taluy.html">Taluy</a></li>
                                 <li><a class="dropdown-item" href="arac.html">Turkuaz</a></li>
@@ -130,7 +130,7 @@
 		<h1 class="text-white mb-3 text-center">Blog</h1>
     <div class="blog-container">
 	
-	<div class="blog-entry image-right">
+	<div class="blog-entry image-left">
 		<img src="images/blog/005.jpg" alt="Blog Image 2">	
 			<div class="blog-text">
             <h2>Pasif sonar projesi</h2>
@@ -143,15 +143,15 @@
                 </div>
 			</div>
         </div>
-		<div class="blog-entry image-left">
+		<div class="blog-entry image-right">
 		<img src="images/blog/004.jpg" alt="Blog Image 2">	
 			<div class="blog-text">
             <h2>Anakart gömülü yazılımında gelişmeler</h2>
-            <p>Anakartın gömülü yazılımını geliştirme üzerinde çalışıyorum. Aracımız ros ile çalıştığı için anakart
-üzerinde rosserial_arduino paket haberleşmesi kullanıyoruz. Bu paketleyici kütüphane, esasında anakartı sağlayıcı (Host) bilgisayar ile gerçek ros konuşması yaptırmak yerine köprü görevi gören bir python yazılımıyla simüle ettiriyor. </p> <p>
+            <p>Anakartın gömülü yazılımını geliştirme üzerinde çalışıyorum. Aracımız ROS ile çalıştığı için anakart
+üzerinde rosserial_arduino paket haberleşmesi kullanıyoruz. Bu paketleyici kütüphane, esasında anakartı sağlayıcı (Host) bilgisayar ile gerçek ROS konuşması yaptırmak yerine köprü görevi gören bir python yazılımıyla simüle ettiriyor. </p> <p>
 
 <p>
-Şu anda anakart üzerinden ping sonarlar okunuyor. Ping sonrarları bir ros servisi aracılığıyla açıp kapatabiliyoruz. Ping sonarlar sayesinde su altında 30 derecelik aralıkla karşımızdaki nesnenin bize olan uzaklığını ölçebiliyoruz. Bu verileri matematiksel fonksiyonlara sokarak su altı haritalandırmamızın doğruluğunu arttırıyoruz. </p>
+Şu anda anakart üzerinden ping sonarlar okunuyor. Ping sonrarları bir ROS servisi aracılığıyla açıp kapatabiliyoruz. Ping sonarlar sayesinde su altında 30 derecelik aralıkla karşımızdaki nesnenin bize olan uzaklığını ölçebiliyoruz. Bu verileri matematiksel fonksiyonlara sokarak su altı haritalandırmamızın doğruluğunu arttırıyoruz. </p>
 
 <p>
 Ayrıca anakartımız üzerinden torpido ateşleme sistemini kullanabiliyoruz. Bu özelliği bir rosservis çağırarak kullanıyoruz. Şu anda bir servis çağrıldığında o fonksiyon hariç tüm haberleşmeler fonksiyon işlevini bitirene kadar duruyor. Her ne kadar bu süre yarım saniye gibi kısa da olsa bu sorunun çözümü üzerinde uğraşıyoruz.  </p>
@@ -164,9 +164,21 @@ Son olarak birçok özelliklerinin dışında anakartımız aslında güç böl�
                 </div>
 			</div>
         </div>
-		
-		<div class="blog-entry image-right">
+		<div class="blog-entry image-left">
 		<img src="images/blog/003.jpg" alt="Blog Image 2">	
+			<div class="blog-text">
+            <h2>Simulink'te sensör füzyonu ve ROS bağlantısı</h2>
+            <p>AUV Yazılım ekibinde uğraştığım projelerden bir tanesi, sensor birleşim algoritmalarının Simulink üzerinden modellenmesinin gerçekleştirilmesiydi. Aracın otonom hareket için hayati öneme sahip konum ve yönelim bilgilerini ölçen sensörler, belirli bir hata birikmesine ve gürültüye sahipler. Bu hatalar, Kalman Filtresi adı verilen bir matematiksel algoritmayla, çoğunlukla birden fazla sensörden gelen verilerin birleştirilmesiyle, düzeltilir ve iyileştirilir. </p>
+<p>Kalman Filtresi algoritması, Simulink içinde bir blok olarak bulunmaktadır. Algoritmayı Simulink içinde modelledikten sonra, aracı çalıştırdığımız ROS ortamına Simulink’te bulunan C/C++ kodu oluşturma özelliği ile geçebiliyoruz. Program, ROS workspace’lerine uyarlı C++ kodu yaratımını sağlıyor.</p> <p>
+Simulink üzerinde modellemeyi gerçekleştirmek, modelin genel görünümüne daha görsel ve bütüncül bir bakış açısına sahip olmamamızı sağlamaktadır. Simulink ortamı ayrıca, veri inceleme ve hata giderimi süreçlerini bizim için kolaylaştırmaktadır.</p>
+			<div class="blog-meta">
+                    <span class="author"><i class="fas fa-user"></i> Emre Tezel</span>
+                    <span class="date"><i class="fas fa-calendar-alt"></i> 2024-05-09</span>
+                </div>
+			</div>
+        </div>
+		<div class="blog-entry image-right">
+		<img src="images/blog/002.jpg" alt="Blog Image 2">	
 			<div class="blog-text">
             <h2>Robotik Gripper Tasarım Süreci</h2>
 			<p>Merhaba, size gripper tasarım sürecimizden biraz bahsetmek istiyorum. Öncelikle gripper, nesneleri manipüle etmeye ve yerlerini değiştirmeye yarar. Başlayalım...</p>
@@ -191,7 +203,7 @@ Yeni bir tasarım stratejisi izleyerek her bir komponenti parametrik ve ayrı ay
             <p>Merhaba, sitemize bir blog sayfası eklemeye karar verdik. Burada aracımızın gelişim sürecini sizlerle paylaşacağız. Ne yazık ki dinamik web sayfası kullanmak bizim için bir opsiyon değil, bundan dolayı yeni bir blog yazısı eklemek istediğimizde doğrudan sayfanın kodunu modifiye etmemiz gerekiyor. Gelecekte görüşme dileğiyle :)</p>
 			<div class="blog-meta">
                     <span class="author"><i class="fas fa-user"></i> Kayra Pamukçu</span>
-                    <span class="date"><i class="fas fa-calendar-alt"></i> 2024-01-05</span>
+                    <span class="date"><i class="fas fa-calendar-alt"></i> 2024-03-05</span>
                 </div>
 			</div>
         </div>

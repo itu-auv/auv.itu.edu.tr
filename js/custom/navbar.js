@@ -82,6 +82,63 @@
 
     
 })(jQuery);
+
+
+document.addEventListener("DOMContentLoaded", function() {
+    const teamLink = document.getElementById('teamLink');
+    const dropdownMenu = teamLink.nextElementSibling;
+    let tapCount = 0;
+
+    teamLink.addEventListener('click', function(event) {
+        if (window.innerWidth <= 991.98) {
+            event.preventDefault();
+            tapCount++;
+
+            if (tapCount === 1) {
+                dropdownMenu.style.display = 'block';
+                setTimeout(() => { tapCount = 0; }, 300);  // Reset tap count after 300ms
+            } else if (tapCount === 2) {
+                window.location.href = teamLink.getAttribute('href');
+            }
+        }
+    });
+
+    document.addEventListener('click', function(event) {
+        if (!teamLink.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.style.display = 'none';
+            tapCount = 0;
+        }
+    });
+});
+
+document.addEventListener("DOMContentLoaded", function() {
+    const teamLink = document.getElementById('vehicleLink');
+    const dropdownMenu = teamLink.nextElementSibling;
+    let tapCount = 0;
+
+    teamLink.addEventListener('click', function(event) {
+        if (window.innerWidth <= 991.98) {
+            event.preventDefault();
+            tapCount++;
+
+            if (tapCount === 1) {
+                dropdownMenu.style.display = 'block';
+                setTimeout(() => { tapCount = 0; }, 300);  // Reset tap count after 300ms
+            } else if (tapCount === 2) {
+                window.location.href = teamLink.getAttribute('href');
+            }
+        }
+    });
+
+    document.addEventListener('click', function(event) {
+        if (!teamLink.contains(event.target) && !dropdownMenu.contains(event.target)) {
+            dropdownMenu.style.display = 'none';
+            tapCount = 0;
+        }
+    });
+});
+
+
 document.addEventListener('DOMContentLoaded', () => {
   
   /**
@@ -118,3 +175,5 @@ document.addEventListener('DOMContentLoaded', () => {
 
 
 });
+//make dropdown menus work on mobile
+

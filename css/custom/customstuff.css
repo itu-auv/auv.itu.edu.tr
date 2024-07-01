@@ -146,11 +146,14 @@
 	
 	.navbar .highlight {
         margin-top: -5px;
-		margin-bottom: -5px;		/* Remove top margin */
-        margin-right: 0; /* Remove right margin */
-        padding: 15px; /* Adjust padding */
+		margin-bottom: -5px;
+        margin-right: 0; 
+        padding: 15px; 
 		width: 90px;
 		
+    }
+	.navbar .nav-item .dropdown-menu {
+        display: none;  
     }
 }
 

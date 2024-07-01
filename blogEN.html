@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ITU AUV Team</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/custom/navbar.css">
+        <link rel="stylesheet" href="css/custom/customstuff.css">
         <link rel="icon" type="image/x-icon" href="images/icon/favicon.ico">
         <!-- Google Web Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -69,7 +69,7 @@
                             <a href="indexEN.html" class="nav-link active">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="team.html" class="nav-link dropdown-toggle">Our Team</a>
+                            <a href="team.html" class="nav-link dropdown-toggle" id="teamLink">Our Team</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="team-electronics.html">Electronics</a></li>
                                 <li><a class="dropdown-item" href="team-software.html">Software</a></li>
@@ -80,7 +80,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="vehicle.html" class="nav-link dropdown-toggle">Vehicles</a>
+                            <a href="vehicle.html" class="nav-link dropdown-toggle" id="vehicleLink">Vehicles</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="vehicle-taluy.html">Taluy</a></li>
                                 <li><a class="dropdown-item" href="vehicle.html">Turkuaz</a></li>
@@ -125,7 +125,7 @@
 		<h1 class="text-white mb-3 text-center">Blog</h1>
     <div class="blog-container">
 	
-	<div class="blog-entry image-right">
+	<div class="blog-entry image-left">
 		<img src="images/blog/005.jpg" alt="Blog Image 2">	
 			<div class="blog-text">
             <h2>Passive sonar project</h2>
@@ -139,13 +139,13 @@
                 </div>
 			</div>
         </div>
-		<div class="blog-entry image-left">
+		<div class="blog-entry image-right">
 		<img src="images/blog/004.jpg" alt="Blog Image 2">	
 			<div class="blog-text">
             <h2>Motherboard Firmware Progress</h2>
-            <p>I am working on developing the embedded software for the motherboard. Since our vehicle works with ros, we are using rosserial_arduino packet communication on the motherboard. This library essentially simulates the motherboard with a python software that acts as a bridge instead of having the host computer talk to real ros. </p> 
+            <p>I am working on developing the embedded software for the motherboard. Since our vehicle works with ROS, we are using rosserial_arduino packet communication on the motherboard. This library essentially simulates the motherboard with a python software that acts as a bridge instead of having the host computer talk to real ROS. </p> 
 <p>
-Currently, ping sonars are read via the motherboard. We can turn ping sonars on and off via a ros service. Thanks to ping sonars, we can measure the distance of objects in front of us to us at 30-degree intervals underwater. We increase the accuracy of our underwater mapping by entering this data into mathematical functions. </p>
+Currently, ping sonars are read via the motherboard. We can turn ping sonars on and off via a ROS service. Thanks to ping sonars, we can measure the distance of objects in front of us to us at 30-degree intervals underwater. We increase the accuracy of our underwater mapping by entering this data into mathematical functions. </p>
 
 <p>
 We can also use the torpedo firing system via our motherboard. We use this feature by calling a rosservice. Right now, when a service is called, all communications except that function stop until the function completes its function. Although this period is as short as half a second, we are working on a solution to this problem.  </p>
@@ -158,9 +158,21 @@ Finally, apart from its many features, our motherboard is actually a power distr
                 </div>
 			</div>
         </div>
-		
-		<div class="blog-entry image-right">
+		<div class="blog-entry image-left">
 		<img src="images/blog/003.jpg" alt="Blog Image 2">	
+			<div class="blog-text">
+            <h2>Sensor fusion on Simulink and ROS connections</h2>
+            <p>One of the projects I worked on in the AUV Software team was modeling sensor fusion algorithms via Simulink. The sensors that measure the position and orientation information of the vehicle, which are vital for autonomous movement, have a certain amount of error accumulation and noise. These errors are corrected and improved by a mathematical algorithm called the Kalman Filter, mostly by combining data from multiple sensors. </p>
+<p>The Kalman Filter algorithm is available as a block in Simulink. After modeling the algorithm in Simulink, we can move to the ROS environment where we run the tool with the C/C++ code generation feature in Simulink. The program provides C++ code generation compatible with ROS workspaces.</p> <p>
+Performing modeling in Simulink allows us to have a more visual and holistic view of the overall appearance of the model. The Simulink environment also makes data review and debugging processes easier for us.</p>
+			<div class="blog-meta">
+                    <span class="author"><i class="fas fa-user"></i> Emre Tezel</span>
+                    <span class="date"><i class="fas fa-calendar-alt"></i> 2024-05-09</span>
+                </div>
+			</div>
+        </div>
+		<div class="blog-entry image-right">
+		<img src="images/blog/002.jpg" alt="Blog Image 2">	
 			<div class="blog-text">
             <h2>Robotic Gripper Design Process</h2>
 			<p>Hello, I would like to tell you a little bit about our gripper design process. Before we begin, you should know that the gripper is used to manipulate objects and change their location. Let's start...</p>
@@ -185,7 +197,7 @@ We followed a new design strategy, designing each component parametrically and s
             <p>Hello, we decided to add a blog page to our site. You'll be able to see the development process of our vehicle here. Unfortunately, using a dynamic web page is not an option for us, so whenever we want to add a new blog post, we have to modify the code of the page directly. Hope to see you around in the future :)</p>
 			<div class="blog-meta">
                     <span class="author"><i class="fas fa-user"></i> Kayra Pamukçu</span>
-                    <span class="date"><i class="fas fa-calendar-alt"></i> 2024-01-05</span>
+                    <span class="date"><i class="fas fa-calendar-alt"></i> 2024-03-05</span>
                 </div>
 			</div>
         </div>
@@ -233,7 +245,7 @@ We followed a new design strategy, designing each component parametrically and s
                 <div class="col-lg-4 col-md-12 d-flex justify-content-center mt-4">
                     <div>
                         <h5 class="text-white mb-4">Quick Links</h5>
-                        <a class="btn btn-link" href="index.html">About Us</a>
+                        <a class="btn btn-link" href="indexEN.html">About Us</a>
                         <a class="btn btn-link" href="contact.php">Contact Us</a>
                         <a class="btn btn-link" href="vehicle.html">Our Vehicles</a>
                         <a class="btn btn-link" href="team.html">Teams</a>

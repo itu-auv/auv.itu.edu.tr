@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>ITU AUV Team</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/custom/navbar.css">
+        <link rel="stylesheet" href="css/custom/customstuff.css">
         <!-- Google Web Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
         <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -69,7 +69,7 @@
                             <a href="indexEN.html" class="nav-link active">Home</a>
                         </li>
                         <li class="nav-item">
-                            <a href="team.html" class="nav-link dropdown-toggle">Our Team</a>
+                            <a href="team.html" class="nav-link dropdown-toggle" id="teamLink">Our Team</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="team-electronics.html">Electronics</a></li>
                                 <li><a class="dropdown-item" href="team-software.html">Software</a></li>
@@ -80,7 +80,7 @@
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="vehicle.html" class="nav-link dropdown-toggle">Vehicles</a>
+                            <a href="vehicle.html" class="nav-link dropdown-toggle" id="vehicleLink">Vehicles</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="vehicle-taluy.html">Taluy</a></li>
                                 <li><a class="dropdown-item" href="vehicle.html">Turkuaz</a></li>
