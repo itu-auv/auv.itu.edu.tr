@@ -124,7 +124,29 @@
         <section class="bg-dark">
 		<h1 class="text-white mb-3 text-center">Blog</h1>
     <div class="blog-container">
-	
+	<div class="blog-entry image-right">
+		<img src="images/blog/006.jpg" alt="Blog Image 2">	
+			<div class="blog-text">
+            <h2>Acoustic Localization</h2>
+			<p>In this post, we are going to dive into (pun intended) one of the assignments that is given to the software team members last season. In this assignment, we tackled the challenge of pinpointing the precise location and depth of an underwater pinger (acoustic transmitter) using acoustic localization techniques. The data provided in a file called data.csv was our starting point, containing vital measurements taken with multiple acoustic sensors. These measurements include the GPS coordinates of the sensors, the depth of the sensors from the water surface, and the distances from the sensors to the pinger. Our task was to use these data points to determine the exact latitude, longitude, and depth of the pinger.</p>
+
+<p>First, we dove into the data processing phase. We read the data from data.csv, adjusting the distance values by multiplying them by two for accurate calculations. We then extracted the latitude, longitude, and depth columns as centers, and the distance column as radii.</p>
+
+<p>Next, we defined the Haversine formula, which calculates the distance between two points on a sphere. This formula was essential for our calculations, considering the Earth's curvature.</p>
+
+<p>We then moved on to the residuals function, which calculates the sum of squared differences between the calculated radius and the known radius. This function was crucial for optimizing our calculations.</p>
+
+<p>For the optimization process, we started with an initial guess, calculated as the mean of the centers array. Using the least squares method, we aimed to find the intersection point of the spheres representing sensor measurements. This process helped us estimate the pinger's coordinates with precision.</p>
+
+<p>Once we had the estimated coordinates, we created an interactive map using Folium. This map allowed us to visualize the sensor locations and the estimated pinger location. We added circles and markers for each sensor location and a distinct marker for the pinger. Finally, we saved the map as pingermap.html for easy access and review.</p>
+
+<p>The result of our efforts was the estimated coordinates of the pinger, pinpointed at Latitude 42.43869 and Longitude 18.58540.</p>
+			<div class="blog-meta">
+                    <span class="author"><i class="fas fa-user"></i> Seren Sıla Uysal</span>
+                    <span class="date"><i class="fas fa-calendar-alt"></i> 2024-07-03</span>
+                </div>
+			</div>
+        </div>
 	<div class="blog-entry image-left">
 		<img src="images/blog/005.jpg" alt="Blog Image 2">	
 			<div class="blog-text">
@@ -189,6 +211,7 @@ We followed a new design strategy, designing each component parametrically and s
 			</div>
         </div>
         
+		
 		
         <div class="blog-entry image-left">
 		<img src="images/blog/001.jpg" alt="Blog Image 2">	

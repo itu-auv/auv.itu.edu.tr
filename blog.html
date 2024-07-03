@@ -129,7 +129,29 @@
         <section class="bg-dark">
 		<h1 class="text-white mb-3 text-center">Blog</h1>
     <div class="blog-container">
-	
+	<div class="blog-entry image-right">
+		<img src="images/blog/006.jpg" alt="Blog Image 2">	
+			<div class="blog-text">
+            <h2>Akustik Lokalizasyon</h2>
+			<p>Bu yazıda, geçen sezon yazılım ekibi üyelerine verilen ödevlerden birine bakacağız. Bu ödevde, akustik yerelleştirme tekniklerini kullanarak bir su altı pinger'ının (akustik verici) kesin yerini ve derinliğini belirlemeyi ele aldık. data.csv adlı bir dosyada sağlanan veriler, birden fazla akustik sensörle alınan ölçümleri içeren başlangıç ​​noktamızdı. Bu ölçümler, sensörlerin GPS koordinatlarını, sensörlerin su yüzeyinden derinliğini ve sensörlerden pinger'a olan mesafeleri içerir. Görevimiz, bu veri noktalarını kullanarak pinger'ın kesin enlemini, boylamını ve derinliğini belirlemekti.</p>
+
+<p>Öncelikle veri işleme aşamasına geçtik. Verileri data.csv'den okuduk, doğru hesaplamalar için mesafe değerlerini ikiyle çarparak ayarladık. Daha sonra enlem, boylam ve derinlik sütunlarını merkezler olarak ve mesafe sütununu yarıçaplar olarak çıkardık.</p>
+
+<p>Sonra, bir küre üzerindeki iki nokta arasındaki mesafeyi hesaplayan Haversine formülünü tanımladık. Bu formül, Dünya'nın eğriliğini göz önünde bulundurarak hesaplamalarımız için önemliydi.</p>
+
+<p>Daha sonra hesaplanan yarıçap ile bilinen yarıçap arasındaki kare farkların toplamını hesaplayan rezidü fonksiyonuna geçtik. Bu fonksiyon hesaplamalarımızı optimize etmek için çok önemliydi.</p>
+
+<p>Optimizasyon süreci için, merkezler dizisinin ortalaması olarak hesaplanan bir başlangıç ​​tahminiyle başladık. En küçük kareler yöntemini kullanarak, sensör ölçümlerini temsil eden kürelerin kesişim noktasını bulmayı amaçladık. Bu süreç, pinger'ın koordinatlarını hassasiyetle tahmin etmemize yardımcı oldu.</p>
+
+<p>Tahmini koordinatlara sahip olduğumuzda, Folium kullanarak etkileşimli bir harita oluşturduk. Bu harita, sensör konumlarını ve tahmini pinger konumunu görselleştirmemizi sağladı. Her sensör konumu için daireler ve işaretleyiciler ve pinger için ayrı bir işaretleyici ekledik. Son olarak, kolay erişim ve inceleme için haritayı pingermap.html olarak kaydettik.</p>
+
+<p>Çabalarımızın sonucu olarak pingerin tahmini koordinatları 42.43869 Enlem ve 18.58540 Boylam olarak belirlendi.</p>
+			<div class="blog-meta">
+                    <span class="author"><i class="fas fa-user"></i> Seren Sıla Uysal</span>
+                    <span class="date"><i class="fas fa-calendar-alt"></i> 2024-07-03</span>
+                </div>
+			</div>
+        </div>
 	<div class="blog-entry image-left">
 		<img src="images/blog/005.jpg" alt="Blog Image 2">	
 			<div class="blog-text">
