@@ -75,7 +75,7 @@
                                 <li><a class="dropdown-item" href="team-software.html">Software</a></li>
                                 <li><a class="dropdown-item" href="team-mechanics.html">Mechanics</a></li>
                                 <li><a class="dropdown-item" href="team-organization.html">Organization</a></li>
-                                <li><a class="dropdown-item" href="team-creative.html">Creative</a></li>
+
                                 <li><a class="dropdown-item" href="team-mentors.html">Mentors</a></li>
                             </ul>
                         </li>
