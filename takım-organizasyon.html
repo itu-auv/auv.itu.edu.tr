@@ -7,7 +7,7 @@
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
         <title>İTÜ AUV Takımı</title>
         <link rel="stylesheet" href="css/bootstrap.min.css">
-        <link rel="stylesheet" href="css/custom/navbar.css">
+        <link rel="stylesheet" href="css/custom/customstuff.css">
         <link rel="icon" type="image/x-icon" href="images/icon/favicon.ico">
         <!-- Google Web Fonts -->
         <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -69,26 +69,32 @@
                             <a href="index.html" class="nav-link active">Ana Sayfa</a>
                         </li>
                         <li class="nav-item">
-                            <a href="takım.html" class="nav-link dropdown-toggle">Takımımız</a>
+                            <a href="takım.html" class="nav-link dropdown-toggle" id="teamLink">Takımımız</a>
                             <ul class="dropdown-menu">
                                 <li><a class="dropdown-item" href="takım-elektronik.html">Elektronik</a></li>
                                 <li><a class="dropdown-item" href="takım-yazılım.html">Yazılım</a></li>
                                 <li><a class="dropdown-item" href="takım-mekanik.html">Mekanik</a></li>
                                 <li><a class="dropdown-item" href="takım-organizasyon.html">Organizasyon</a></li>
-                                <li><a class="dropdown-item" href="takım-kreatif.html">Kreatif</a></li>
+                                
                                 <li><a class="dropdown-item" href="takım-mentorlar.html">Mentorlar</a></li>
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="arac.html" class="nav-link dropdown-toggle">Araçlar</a>
+                            <a href="arac.html" class="nav-link dropdown-toggle" id="vehicleLink">Araçlar</a>
                             <ul class="dropdown-menu">
-                                <li><a class="dropdown-item" href="arac.html">Turkuaz</a></li>
                                 <li><a class="dropdown-item" href="arac-taluy.html">Taluy</a></li>
-
+                                <li><a class="dropdown-item" href="arac.html">Turkuaz</a></li>
+                               
                             </ul>
                         </li>
                         <li class="nav-item">
-                            <a href="sponsorluk.html" class="nav-link">Sponsorluk</a>
+                            <a href="gallery.html" class="nav-link">Galeri</a>
+                        </li>
+<li class="nav-item">
+                            <a href="blog.html" class="nav-link">Blog</a>
+                        </li>
+<li class="nav-item">
+                            <a href="sponsorluk.html" class="nav-link highlight">Sponsorluk</a>
                         </li>
                         <li class="nav-item">
                             <a href="iletisim.php" class="nav-link">İletişim</a>
@@ -143,7 +149,6 @@
                                     <p class="m-0">Geomatik Mühendisliği</p>
                                     <p class="m-0">4. Sınıf Lisans Öğrencisi</p>
                                 </div>
-
                             </div>
                         </div>
                     </div>
@@ -151,7 +156,39 @@
             </div>
         </div>
         <!-- TeamLead End -->
+		<!-- Team Start -->
+		<div class="container-xxl py-5">
+            <div class="container">
+			<div class="text-center mx-auto  wow fadeInUp" data-wow-delay="0.1s" style="max-width: 600px;">
+                    <p class="d-inline-block bg-secondary text-white py-1 px-4">Üyeler</p>
+                </div>
+                <div class="row justify-content-center g-4">
+                    
+                    <div class="col-lg-3 col-md-6 wow fadeInUp" data-wow-delay="0.5s">
+                        <div class="team-item">
+                            <div class="team-img position-relative overflow-hidden">
+                                <img class="img-fluid" src="images/members/blankProfile.jpg" alt="">
+                                <div class="team-social">
+                                    <a class="btn btn-square" href="mailto:demirbasz23@itu.edu.tr"><i
+                                            class="bi bi-envelope-fill"></i></a>
+                                    <a class="btn btn-square" href="http://linkedin.com/in/zeynep-demirbaş-221151297/"><i
+                                            class="bi bi-linkedin"></i></a>
+                                </div>
+                            </div>
+                            <div class="bg-secondary text-center p-4">
+                                <h5 class="text-white">Zeynep Demirbaş</h5>
+                                <div class="text-white" style="font-size: 12px;">
+                                    <p class="m-0">Endüstri Mühendisliği</p>
+                                    <p class="m-0">1. Sınıf Lisans Öğrencisi</p>
+                                </div>
 
+                            </div>
+                        </div>
+                    </div>
+                </div>
+			</div>
+		</div>
+		<!-- Team End -->
 
 
         <!-- Footer Start -->
@@ -172,6 +209,8 @@
                                     class="bi bi-twitter"></i></a>
                             <a class="btn btn-square me-0" href="https://www.linkedin.com/company/itu-auv-team"
                                 target="_blank"><i class="bi bi-linkedin"></i></a>
+<a class="btn btn-square me-0" href="https://github.com/itu-auv"
+                                target="_blank"><i class="bi bi-github"></i></a>
                             <a class="btn btn-square me-0" href="mailto:auv@itu.edu.tr"><i
                                     class="bi bi-envelope-fill"></i></a>
                         </div>
