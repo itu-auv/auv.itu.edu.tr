@@ -129,6 +129,46 @@
         <section class="bg-dark">
 		<h1 class="text-white mb-3 text-center">Blog</h1>
     <div class="blog-container">
+        <div class="blog-entry image-left">
+                <div class="blog-text">
+                <h2>Küçük Bir Vida, Büyük Bir Ders: ESC Kartımız Neden Yandı?</h2>
+                <p>AUV aracımızda motor kontrolünü sağlamak için kullandığımız ESC kartları, ESC case'inin içinde güvenli bir şekilde yer alıyor. Ancak geçtiğimiz aylarda, hepimize güzel bir ders olacak bir olay yaşadık.</p>
+                <p>Mekanik ekip arkadaşlarımız ESC case montajını yaparken, farkında olmadan case'in içine bir civata düşürmüşler. Bu küçük vida, kartın üzerinde kısa devreye sebep oldu ve kartımızı tamamen kullanılamaz hale getirdi. Başta sorunun bir komponent kaynaklı olduğunu düşündük, tek tek parçaları değiştirerek çözüm aradık. Ancak ne yaptıysak sonuç alamadık.</p>
+                <p>Bir süre sonra anladık ki problem sadece bir komponentte değil, kartın tamamındaydı. Yanlış yere düşen bir vida, tüm ESC kartının yanmasına neden olmuştu.</p>
+                <p>Bu deneyim bize sadece dikkatli olmanın değil, doğru teşhis koymanın da ne kadar önemli olduğunu gösterdi. Sorunu tespit ettikten sonra kartı yeniden tasarladık, üretimini gerçekleştirdik ve sonunda kartımız yeniden çalışır hale geldi.</p>
+                <p>Bazen en büyük problemler, en küçük detaylarda gizli olabiliyor. Biz de bu süreçten önemli bir ders çıkardık: “Montajda son kontrol, en az tasarım kadar kritik.”</p>
+                <div class="blog-meta">
+                        <span class="author"><i class="fas fa-user"></i> Mehmet Erkılıç</span>
+                        <span class="date"><i class="fas fa-calendar-alt"></i> 2025-04-11</span>
+                    </div>
+                </div>
+            </div>
+        <div class="blog-entry image-right">
+                <div class="blog-text">
+                <h2>Taluy Mini Gömülü Yazılımdaki Gelişmeler</h2>
+                <p>Bu yazıda yeni aracımız Taluy Mini'nin gömülü yazılımındaki gelişmelerden bahsedeceğim.</p>
+                <p>Taluy Mini AUV üzerinde bulunan ana kart;  sensör okumaları ve ham verinin sürekli işlenmesi gibi tekrara binen bütün görevleri, ana karttaki entegre devrelerine gereken voltajda güç dağıtımını ve motorların sürülmesi için gerekli PWM oluşturması gibi işlemleri ana bilgisayardan soyutlayarak tek bir kartta birleştirmektedir. Bu sayede daha fazla mikrodenetleyici kullanmaktan ve mikrodenetleyiciler arasında haberleşmenin getirdiği ekstra gecikmeden kaçındık. Ayrıca, ana bilgisayarın görev yükünü ana karta paylaştırarak ana bilgisayarın asıl yarışma görevleri için daha verimli kullanılmasını sağladık</p>
+                <p>Karttaki sensör okumaları, fırçasız doğru akım motorlarının sürülmesi, ROS paketlerinin ethernet ile ana bilgisayara gönderilmesi ve ana kartın diğer mevcut görevlerinin eşzamanlı olacak şekilde yönetmek için kendi RTOS kütüphanemizi geliştirdik. AUV-RTOS, basit bir round-robin schedular içermekte ve araçtaki görevlerin düşük geçikme ile istenilen periyotlarda gerçekleşmesini sağlamaktadır.</p>
+                <p>Yeni aracımızda IMU sensörü olarak BNO055 kullandık. BNO'nun mutlak oryantasyon sağlaması ve üzerinde bulunan ARM Cortex-M0+ sayesinde sensor-fusion yapabilmesi gibi özellikleri dolayısıyla tercih ettik. IMU sensörünün testi ve kalibrasyonu için rviz'i -ROS'un 3D simülasyon uygulamasını- kullanarak test ettik. Ana karta bağlı diğer bir sensör olan Navquest Micro600 DVL'in mesajlarını çözümlemek için kendi sürücü yazılımımızı geliştirdik. Ana kartta bulunan MAX232 entegresi sayesinde, mikrodenetleyicinin UART çıkışının voltaj seviyesini DVL sensörünün RS-232 ile haberleşebilmesi için gereken voltaj seviyesine çıkararak DVL'in anakartla haberleşmesini sağladık.</p>
+                <p>Taluy Mini anakartının, Taluy expansion kartından farklı bir diğer özelliği ise ana bilgisayarla haberleşmek için UART yerine Ethernet kullanmasıdır. Ethernet üzerinde network ve transport katmanı olarak gömülü sistemlerde kullanılan lwIP TCP/IPv4 yığın kütüphanesini ve ana bilgisayar ile ROS paketleriyle haberleşebilmek için rosserial'in ethernet API'ını kullandık. Ethernet'in CRC32 hata tespiti ve host/client arasında geribildirim özelliklerine sahip olması sebebiyle ana kartta UART yerine ethernet haberleşmesine geçtik.</p>
+                <div class="blog-meta">
+                        <span class="author"><i class="fas fa-user"></i> Taşkın Ökmen</span>
+                        <span class="date"><i class="fas fa-calendar-alt"></i> 2025-03-08</span>
+                    </div>
+                </div>
+            </div>
+        <div class="blog-entry image-left">
+                <div class="blog-text">
+                <h2>Expansion Kartı: Bir Hata, Bir Gelişim</h2>
+                <p>Aracımızda kartlar arası iletişimi CAN Bus protokolüyle sağlıyoruz. Takım olarak, sistemin ihtiyaçlarına göre özel olarak tasarladığımız kartlarımızda CAN transceiver'ları gömülü olarak kullanıyoruz. Bu sayede kartlar arası haberleşmeyi güvenli ve kararlı bir şekilde sağlayabiliyoruz. Ancak sistemin bir diğer bileşeni olan Jetson'da doğrudan CAN transceiver desteği bulunmadığı için, Jetson ile araç kartları arasında köprü görevi görecek bir expansion kartı tasarladık. Expansion kartı CAN sinyallerini alarak rosserial ile Jetson'a iletmekte. Böylece Jetson, diğer sistem modülleriyle sorunsuz şekilde iletişim kurabiliyor.</p>
+                <p>Bu sistemde her şey sorunsuz ilerliyordu, ta ki havuz testinden önceki hazırlıklarda expansion kartı Jetson'a yanlış yönde takılana kadar. Bu hata, kartın üzerindeki çipin yanmasına neden oldu.</p>
+                <p>Yaşanan bu talihsizlik sonrası yalnızca hasarlı kartı onarmakla kalmayıp, mevcut tasarımı da gözden geçirme kararı aldık. Bu süreçte, daha önce kullandığımız STM32F103 çipi yerine, daha güçlü ve hızlı olan STM32F446 çipine geçiyoruz. Bu yeni çip, hem işlem gücü hem de çevresel donanım desteği açısından bize daha fazla esneklik sunacak. </p>
+                <div class="blog-meta">
+                        <span class="author"><i class="fas fa-user"></i> Ravza Betül Karakaş</span>
+                        <span class="date"><i class="fas fa-calendar-alt"></i> 2025-02-15</span>
+                    </div>
+                </div>
+            </div>
 	<div class="blog-entry image-right">
 		<img src="images/blog/006.jpg" alt="Blog Image 2">	
 			<div class="blog-text">
@@ -191,7 +231,7 @@ Son olarak birçok özelliklerinin dışında anakartımız aslında güç böl�
 			<div class="blog-text">
             <h2>Simulink'te sensör füzyonu ve ROS bağlantısı</h2>
             <p>AUV Yazılım ekibinde uğraştığım projelerden bir tanesi, sensor birleşim algoritmalarının Simulink üzerinden modellenmesinin gerçekleştirilmesiydi. Aracın otonom hareket için hayati öneme sahip konum ve yönelim bilgilerini ölçen sensörler, belirli bir hata birikmesine ve gürültüye sahipler. Bu hatalar, Kalman Filtresi adı verilen bir matematiksel algoritmayla, çoğunlukla birden fazla sensörden gelen verilerin birleştirilmesiyle, düzeltilir ve iyileştirilir. </p>
-<p>Kalman Filtresi algoritması, Simulink içinde bir blok olarak bulunmaktadır. Algoritmayı Simulink içinde modelledikten sonra, aracı çalıştırdığımız ROS ortamına Simulink’te bulunan C/C++ kodu oluşturma özelliği ile geçebiliyoruz. Program, ROS workspace’lerine uyarlı C++ kodu yaratımını sağlıyor.</p> <p>
+<p>Kalman Filtresi algoritması, Simulink içinde bir blok olarak bulunmaktadır. Algoritmayı Simulink içinde modelledikten sonra, aracı çalıştırdığımız ROS ortamına Simulink'te bulunan C/C++ kodu oluşturma özelliği ile geçebiliyoruz. Program, ROS workspace'lerine uyarlı C++ kodu yaratımını sağlıyor.</p> <p>
 Simulink üzerinde modellemeyi gerçekleştirmek, modelin genel görünümüne daha görsel ve bütüncül bir bakış açısına sahip olmamamızı sağlamaktadır. Simulink ortamı ayrıca, veri inceleme ve hata giderimi süreçlerini bizim için kolaylaştırmaktadır.</p>
 			<div class="blog-meta">
                     <span class="author"><i class="fas fa-user"></i> Emre Tezel</span>

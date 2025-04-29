@@ -124,6 +124,47 @@
         <section class="bg-dark">
 		<h1 class="text-white mb-3 text-center">Blog</h1>
     <div class="blog-container">
+        <div class="blog-entry image-left">
+                <div class="blog-text">
+                <h2>A Small Screw, A Big Lesson: Why Our ESC Board Burned Out</h2>
+                <p>The ESC boards we use to control the motors in our AUV vehicle are securely housed inside an ESC case. However, a few months ago, we experienced an incident that taught us all a valuable lesson.</p>
+                <p>While our mechanical team was assembling the ESC case, they accidentally dropped a screw inside without realizing it. This small screw caused a short circuit on the board, rendering it completely unusable. At first, we assumed the issue was caused by a single component and tried replacing parts one by one in search of a solution. But no matter what we did, we couldn't get it working again.</p>
+                <p>Eventually, we discovered that the problem wasn't limited to a single component — the entire board was damaged. A screw falling into the wrong place had led to the complete destruction of the ESC board.</p>
+                <p>This experience taught us not only the importance of being careful, but also how crucial accurate diagnosis is. After identifying the issue, we redesigned the board, had it manufactured, and finally brought it back to life.</p>
+                <p>Sometimes, the biggest problems are hidden in the smallest details. We learned an important lesson from this process: "Final checks during assembly are just as critical as the design itself."</p>
+                <div class="blog-meta">
+                        <span class="author"><i class="fas fa-user"></i> Mehmet Erkılıç</span>
+                        <span class="date"><i class="fas fa-calendar-alt"></i> 2025-04-11</span>
+                    </div>
+                </div>
+            </div>
+        <div class="blog-entry image-right">
+                <div class="blog-text">
+                <h2>Developments in Taluy Mini Embedded Software</h2>
+                <p>In this article, I will talk about the developments in the embedded software of our new vehicle, Taluy Mini.</p>
+                <p>The main board on the Taluy Mini AUV integrates all repetitive tasks such as sensor readings and continuous processing of raw data, power distribution to the integrated circuits on the board with the required voltage, and PWM generation for driving the motors — effectively abstracting these operations from the main computer and consolidating them into a single board. This allowed us to avoid using multiple microcontrollers and the additional delay caused by communication between microcontrollers. Moreover, by offloading some of the main computer's workload to the main board, we enabled the main computer to be used more efficiently for core competition tasks.</p>
+                <p>To manage sensor readings on the board, driving the brushless DC motors, sending ROS packages to the main computer via Ethernet, and executing the other ongoing tasks of the main board concurrently, we developed our own RTOS library. AUV-RTOS includes a simple round-robin scheduler and ensures that the tasks on the vehicle are performed with low latency and at the desired intervals.</p>
+                <p>In our new vehicle, we used the BNO055 as the IMU sensor. We chose BNO due to its ability to provide absolute orientation and perform sensor fusion thanks to the onboard ARM Cortex-M0+. We tested and calibrated the IMU sensor using rviz — ROS's 3D simulation tool. We also developed our own driver software to decode the messages from the Navquest Micro600 DVL sensor, which is connected to the main board. Thanks to the MAX232 integrated circuit on the main board, we converted the UART output voltage level of the microcontroller to the RS-232 voltage level required for communication with the DVL sensor, enabling successful communication between the DVL and the main board.</p>
+                <p>Another difference between the Taluy Mini main board and the Taluy expansion board is that it uses Ethernet instead of UART to communicate with the main computer. For network and transport layers over Ethernet, we used the lwIP TCP/IPv4 stack library, commonly used in embedded systems, and the Ethernet API of rosserial to communicate with the main computer via ROS packages. Due to Ethernet's CRC32 error detection and feedback features between host and client, we transitioned from UART to Ethernet communication on the main board.</p>
+                <div class="blog-meta">
+                        <span class="author"><i class="fas fa-user"></i> Taşkın Ökmen</span>
+                        <span class="date"><i class="fas fa-calendar-alt"></i> 2025-03-08</span>
+                    </div>
+                </div>
+            </div>
+        <div class="blog-entry image-left">
+                <div class="blog-text">
+                <h2>Expansion Board: A Mistake, A Step Forward</h2>
+                <p>In our vehicle, we use the CAN Bus protocol for communication between custom-designed boards, which we developed based on the specific needs of our system. Each board includes an integrated CAN transceiver, allowing for reliable and stable communication across the system.</p>
+                <p>However, one of the key components of our system, the Jetson, does not have built-in support for CAN transceivers. To bridge this gap, we designed an expansion board that acts as an interface between the Jetson and the vehicle's CAN network. This expansion board receives CAN signals and transmits them to the Jetson via rosserial, enabling seamless communication between the Jetson and other system modules.</p>
+                <p>Everything was working smoothly—until a mishap during pre-pool test preparations. The expansion board was accidentally inserted into the Jetson in the wrong orientation, causing the onboard chip to burn out.</p>
+                <p>Following this unfortunate incident, we not only repaired the damaged board but also decided to revisit our design. As part of this process, we are upgrading from the STM32F103 chip to the more powerful and faster STM32F446. This new chip provides us with greater flexibility in terms of processing power and peripheral support, which will better meet the evolving demands of our system.</p>
+                <div class="blog-meta">
+                        <span class="author"><i class="fas fa-user"></i> Ravza Betül Karakaş</span>
+                        <span class="date"><i class="fas fa-calendar-alt"></i> 2025-02-15</span>
+                    </div>
+                </div>
+            </div>
 	<div class="blog-entry image-right">
 		<img src="images/blog/006.jpg" alt="Blog Image 2">	
 			<div class="blog-text">
