@@ -127,152 +127,34 @@
 		
         <div class="bg-dark" style="width: 100%; height: 125px;"></div>
 <!-- Blog Start -->
-        <section class="bg-dark">
-		<h1 class="text-white mb-3 text-center">Blog</h1>
-    <div class="blog-container">
-        <div class="blog-entry image-left">
-                <div class="blog-text">
-                <h2>Küçük Bir Vida, Büyük Bir Ders: ESC Kartımız Neden Yandı?</h2>
-                <p>AUV aracımızda motor kontrolünü sağlamak için kullandığımız ESC kartları, ESC case'inin içinde güvenli bir şekilde yer alıyor. Ancak geçtiğimiz aylarda, hepimize güzel bir ders olacak bir olay yaşadık.</p>
-                <p>Mekanik ekip arkadaşlarımız ESC case montajını yaparken, farkında olmadan case'in içine bir civata düşürmüşler. Bu küçük vida, kartın üzerinde kısa devreye sebep oldu ve kartımızı tamamen kullanılamaz hale getirdi. Başta sorunun bir komponent kaynaklı olduğunu düşündük, tek tek parçaları değiştirerek çözüm aradık. Ancak ne yaptıysak sonuç alamadık.</p>
-                <p>Bir süre sonra anladık ki problem sadece bir komponentte değil, kartın tamamındaydı. Yanlış yere düşen bir vida, tüm ESC kartının yanmasına neden olmuştu.</p>
-                <p>Bu deneyim bize sadece dikkatli olmanın değil, doğru teşhis koymanın da ne kadar önemli olduğunu gösterdi. Sorunu tespit ettikten sonra kartı yeniden tasarladık, üretimini gerçekleştirdik ve sonunda kartımız yeniden çalışır hale geldi.</p>
-                <p>Bazen en büyük problemler, en küçük detaylarda gizli olabiliyor. Biz de bu süreçten önemli bir ders çıkardık: “Montajda son kontrol, en az tasarım kadar kritik.”</p>
-                <div class="blog-meta">
-                        <span class="author"><i class="fas fa-user"></i> Mehmet Erkılıç</span>
-                        <span class="date"><i class="fas fa-calendar-alt"></i> 2025-04-11</span>
+        <section class="bg-dark" style="min-height: 80vh;">
+            <h1 class="text-white mb-4 text-center">Blog</h1>
+            
+            <div class="container blog-controls text-white">
+                <div class="row w-100 justify-content-center">
+                    <div class="col-md-8 search-group mb-3 text-center">
+                        <input type="text" id="blog-search" placeholder="Blog yazılarında ara..." style="width: 100%; max-width: 500px;">
+                    </div>
+                </div>
+                <div class="filter-group mb-3">
+                    <button class="filter-btn active" data-filter="all">Tümü</button>
+                    <button class="filter-btn" data-filter="Yazılım">Yazılım</button>
+                    <button class="filter-btn" data-filter="Elektronik">Elektronik</button>
+                    <button class="filter-btn" data-filter="Mekanik">Mekanik</button>
+                    <button class="filter-btn" data-filter="Organizasyon">Organizasyon</button>
+                    <div class="year-group d-inline-block ms-2">
+                        <select id="year-select">
+                            <option value="all">Tüm Yıllar</option>
+                        </select>
                     </div>
                 </div>
             </div>
-        <div class="blog-entry image-right">
-                <div class="blog-text">
-                <h2>Taluy Mini Gömülü Yazılımdaki Gelişmeler</h2>
-                <p>Bu yazıda yeni aracımız Taluy Mini'nin gömülü yazılımındaki gelişmelerden bahsedeceğim.</p>
-                <p>Taluy Mini AUV üzerinde bulunan ana kart;  sensör okumaları ve ham verinin sürekli işlenmesi gibi tekrara binen bütün görevleri, ana karttaki entegre devrelerine gereken voltajda güç dağıtımını ve motorların sürülmesi için gerekli PWM oluşturması gibi işlemleri ana bilgisayardan soyutlayarak tek bir kartta birleştirmektedir. Bu sayede daha fazla mikrodenetleyici kullanmaktan ve mikrodenetleyiciler arasında haberleşmenin getirdiği ekstra gecikmeden kaçındık. Ayrıca, ana bilgisayarın görev yükünü ana karta paylaştırarak ana bilgisayarın asıl yarışma görevleri için daha verimli kullanılmasını sağladık</p>
-                <p>Karttaki sensör okumaları, fırçasız doğru akım motorlarının sürülmesi, ROS paketlerinin ethernet ile ana bilgisayara gönderilmesi ve ana kartın diğer mevcut görevlerinin eşzamanlı olacak şekilde yönetmek için kendi RTOS kütüphanemizi geliştirdik. AUV-RTOS, basit bir round-robin schedular içermekte ve araçtaki görevlerin düşük geçikme ile istenilen periyotlarda gerçekleşmesini sağlamaktadır.</p>
-                <p>Yeni aracımızda IMU sensörü olarak BNO055 kullandık. BNO'nun mutlak oryantasyon sağlaması ve üzerinde bulunan ARM Cortex-M0+ sayesinde sensor-fusion yapabilmesi gibi özellikleri dolayısıyla tercih ettik. IMU sensörünün testi ve kalibrasyonu için rviz'i -ROS'un 3D simülasyon uygulamasını- kullanarak test ettik. Ana karta bağlı diğer bir sensör olan Navquest Micro600 DVL'in mesajlarını çözümlemek için kendi sürücü yazılımımızı geliştirdik. Ana kartta bulunan MAX232 entegresi sayesinde, mikrodenetleyicinin UART çıkışının voltaj seviyesini DVL sensörünün RS-232 ile haberleşebilmesi için gereken voltaj seviyesine çıkararak DVL'in anakartla haberleşmesini sağladık.</p>
-                <p>Taluy Mini anakartının, Taluy expansion kartından farklı bir diğer özelliği ise ana bilgisayarla haberleşmek için UART yerine Ethernet kullanmasıdır. Ethernet üzerinde network ve transport katmanı olarak gömülü sistemlerde kullanılan lwIP TCP/IPv4 yığın kütüphanesini ve ana bilgisayar ile ROS paketleriyle haberleşebilmek için rosserial'in ethernet API'ını kullandık. Ethernet'in CRC32 hata tespiti ve host/client arasında geribildirim özelliklerine sahip olması sebebiyle ana kartta UART yerine ethernet haberleşmesine geçtik.</p>
-                <div class="blog-meta">
-                        <span class="author"><i class="fas fa-user"></i> Taşkın Ökmen</span>
-                        <span class="date"><i class="fas fa-calendar-alt"></i> 2025-03-08</span>
-                    </div>
-                </div>
+
+            <div id="blog-grid">
+                <!-- Blog posts will be loaded here via JS -->
+                 <div class="text-center text-white w-100"><div class="spinner-border" role="status"></div> Loading...</div>
             </div>
-        <div class="blog-entry image-left">
-                <div class="blog-text">
-                <h2>Expansion Kartı: Bir Hata, Bir Gelişim</h2>
-                <p>Aracımızda kartlar arası iletişimi CAN Bus protokolüyle sağlıyoruz. Takım olarak, sistemin ihtiyaçlarına göre özel olarak tasarladığımız kartlarımızda CAN transceiver'ları gömülü olarak kullanıyoruz. Bu sayede kartlar arası haberleşmeyi güvenli ve kararlı bir şekilde sağlayabiliyoruz. Ancak sistemin bir diğer bileşeni olan Jetson'da doğrudan CAN transceiver desteği bulunmadığı için, Jetson ile araç kartları arasında köprü görevi görecek bir expansion kartı tasarladık. Expansion kartı CAN sinyallerini alarak rosserial ile Jetson'a iletmekte. Böylece Jetson, diğer sistem modülleriyle sorunsuz şekilde iletişim kurabiliyor.</p>
-                <p>Bu sistemde her şey sorunsuz ilerliyordu, ta ki havuz testinden önceki hazırlıklarda expansion kartı Jetson'a yanlış yönde takılana kadar. Bu hata, kartın üzerindeki çipin yanmasına neden oldu.</p>
-                <p>Yaşanan bu talihsizlik sonrası yalnızca hasarlı kartı onarmakla kalmayıp, mevcut tasarımı da gözden geçirme kararı aldık. Bu süreçte, daha önce kullandığımız STM32F103 çipi yerine, daha güçlü ve hızlı olan STM32F446 çipine geçiyoruz. Bu yeni çip, hem işlem gücü hem de çevresel donanım desteği açısından bize daha fazla esneklik sunacak. </p>
-                <div class="blog-meta">
-                        <span class="author"><i class="fas fa-user"></i> Ravza Betül Karakaş</span>
-                        <span class="date"><i class="fas fa-calendar-alt"></i> 2025-02-15</span>
-                    </div>
-                </div>
-            </div>
-	<div class="blog-entry image-right">
-		<img src="images/blog/006.jpg" alt="Blog Image 2">	
-			<div class="blog-text">
-            <h2>Akustik Lokalizasyon</h2>
-			<p>Bu yazıda, geçen sezon yazılım ekibi üyelerine verilen ödevlerden birine bakacağız. Bu ödevde, akustik yerelleştirme tekniklerini kullanarak bir su altı pinger'ının (akustik verici) kesin yerini ve derinliğini belirlemeyi ele aldık. data.csv adlı bir dosyada sağlanan veriler, birden fazla akustik sensörle alınan ölçümleri içeren başlangıç ​​noktamızdı. Bu ölçümler, sensörlerin GPS koordinatlarını, sensörlerin su yüzeyinden derinliğini ve sensörlerden pinger'a olan mesafeleri içerir. Görevimiz, bu veri noktalarını kullanarak pinger'ın kesin enlemini, boylamını ve derinliğini belirlemekti.</p>
-
-<p>Öncelikle veri işleme aşamasına geçtik. Verileri data.csv'den okuduk, doğru hesaplamalar için mesafe değerlerini ikiyle çarparak ayarladık. Daha sonra enlem, boylam ve derinlik sütunlarını merkezler olarak ve mesafe sütununu yarıçaplar olarak çıkardık.</p>
-
-<p>Sonra, bir küre üzerindeki iki nokta arasındaki mesafeyi hesaplayan Haversine formülünü tanımladık. Bu formül, Dünya'nın eğriliğini göz önünde bulundurarak hesaplamalarımız için önemliydi.</p>
-
-<p>Daha sonra hesaplanan yarıçap ile bilinen yarıçap arasındaki kare farkların toplamını hesaplayan rezidü fonksiyonuna geçtik. Bu fonksiyon hesaplamalarımızı optimize etmek için çok önemliydi.</p>
-
-<p>Optimizasyon süreci için, merkezler dizisinin ortalaması olarak hesaplanan bir başlangıç ​​tahminiyle başladık. En küçük kareler yöntemini kullanarak, sensör ölçümlerini temsil eden kürelerin kesişim noktasını bulmayı amaçladık. Bu süreç, pinger'ın koordinatlarını hassasiyetle tahmin etmemize yardımcı oldu.</p>
-
-<p>Tahmini koordinatlara sahip olduğumuzda, Folium kullanarak etkileşimli bir harita oluşturduk. Bu harita, sensör konumlarını ve tahmini pinger konumunu görselleştirmemizi sağladı. Her sensör konumu için daireler ve işaretleyiciler ve pinger için ayrı bir işaretleyici ekledik. Son olarak, kolay erişim ve inceleme için haritayı pingermap.html olarak kaydettik.</p>
-
-<p>Çabalarımızın sonucu olarak pingerin tahmini koordinatları 42.43869 Enlem ve 18.58540 Boylam olarak belirlendi.</p>
-			<div class="blog-meta">
-                    <span class="author"><i class="fas fa-user"></i> Seren Sıla Uysal</span>
-                    <span class="date"><i class="fas fa-calendar-alt"></i> 2024-07-03</span>
-                </div>
-			</div>
-        </div>
-	<div class="blog-entry image-left">
-		<img src="images/blog/005.jpg" alt="Blog Image 2">	
-			<div class="blog-text">
-            <h2>Pasif sonar projesi</h2>
-            <p>Bu sene çalışma fırsatını bulduğum en büyük projelerden biri olan pasif sonar projesinden size bahsetmek istiyorum. Aracımızın bu seneki katılacağı Robosub 2024 yarışmasındaki yüzleşeceği en kritik problemlerden biri görev bölgelerinin belli bir frekansta tekrarlı ve kesik bir şekilde sinyal gönderen "pinger" adı verlien cihazlar ile işaretlenmiş olması. Aracımızın bu görevlere ulaşabilmesi için etkili bir şekilde dinleme yaparak ve bu iş için hazırlanmış algoritmasını kullanarak görev yerlerini ayırt edebilmesi gerekiyor.</p>
-			<p>Donanımsal anlamda bu görev için hidrofon denilen su altı mikrofonlarından yararlanıyoruz. Hidrofonlarımızdan aldığımız sinyalleri akustik işleme kartımızdan (APB) geçirerek ve daha sonrasında analog olan sinyalimizi dijital ortama aktararak hazırlanan algoritmamızda işlenebilir hale getiriyoruz. </p>
-			<p>Yazılımsal anlamda ise gelen sinyalin bir sinüs şeklinde olmasından yararlanarak tepe noktaları arasındaki voltaj değerlerini PWM benzeri değerlere bölerek bu değerler arasındaki gelen farklı sinyallerin geliş süreleri ve hidrofonlarımızın geometrik kendi aralarındaki açısal konumlarından yola çıkarak sinyalin geliş süresi ve aracımıza geliş açısını hesaplıyoruz. Bu bilgiyi kullanarak aracımızı sinyal kaynağına yönlendirerek görev bölgemizi bulabiliyoruz.</p>
-			<div class="blog-meta">
-                    <span class="author"><i class="fas fa-user"></i> Yusuf Çalışkan</span>
-                    <span class="date"><i class="fas fa-calendar-alt"></i> 2024-06-14</span>
-                </div>
-			</div>
-        </div>
-		<div class="blog-entry image-right">
-		<img src="images/blog/004.jpg" alt="Blog Image 2">	
-			<div class="blog-text">
-            <h2>Anakart gömülü yazılımında gelişmeler</h2>
-            <p>Anakartın gömülü yazılımını geliştirme üzerinde çalışıyorum. Aracımız ROS ile çalıştığı için anakart
-üzerinde rosserial_arduino paket haberleşmesi kullanıyoruz. Bu paketleyici kütüphane, esasında anakartı sağlayıcı (Host) bilgisayar ile gerçek ROS konuşması yaptırmak yerine köprü görevi gören bir python yazılımıyla simüle ettiriyor. </p> <p>
-
-<p>
-Şu anda anakart üzerinden ping sonarlar okunuyor. Ping sonrarları bir ROS servisi aracılığıyla açıp kapatabiliyoruz. Ping sonarlar sayesinde su altında 30 derecelik aralıkla karşımızdaki nesnenin bize olan uzaklığını ölçebiliyoruz. Bu verileri matematiksel fonksiyonlara sokarak su altı haritalandırmamızın doğruluğunu arttırıyoruz. </p>
-
-<p>
-Ayrıca anakartımız üzerinden torpido ateşleme sistemini kullanabiliyoruz. Bu özelliği bir rosservis çağırarak kullanıyoruz. Şu anda bir servis çağrıldığında o fonksiyon hariç tüm haberleşmeler fonksiyon işlevini bitirene kadar duruyor. Her ne kadar bu süre yarım saniye gibi kısa da olsa bu sorunun çözümü üzerinde uğraşıyoruz.  </p>
-
-<p>
-Son olarak birçok özelliklerinin dışında anakartımız aslında güç bölücü devrelere sahip olan bir güç dağıtım kartıdır. Bu sayede birçok farklı voltaj seviyesi isteyen sensörlerimizi çalıştırabiliyoruz.</p>
-			<div class="blog-meta">
-                    <span class="author"><i class="fas fa-user"></i> Nihat Arslan</span>
-                    <span class="date"><i class="fas fa-calendar-alt"></i> 2024-05-24</span>
-                </div>
-			</div>
-        </div>
-		<div class="blog-entry image-left">
-		<img src="images/blog/003.jpg" alt="Blog Image 2">	
-			<div class="blog-text">
-            <h2>Simulink'te sensör füzyonu ve ROS bağlantısı</h2>
-            <p>AUV Yazılım ekibinde uğraştığım projelerden bir tanesi, sensor birleşim algoritmalarının Simulink üzerinden modellenmesinin gerçekleştirilmesiydi. Aracın otonom hareket için hayati öneme sahip konum ve yönelim bilgilerini ölçen sensörler, belirli bir hata birikmesine ve gürültüye sahipler. Bu hatalar, Kalman Filtresi adı verilen bir matematiksel algoritmayla, çoğunlukla birden fazla sensörden gelen verilerin birleştirilmesiyle, düzeltilir ve iyileştirilir. </p>
-<p>Kalman Filtresi algoritması, Simulink içinde bir blok olarak bulunmaktadır. Algoritmayı Simulink içinde modelledikten sonra, aracı çalıştırdığımız ROS ortamına Simulink'te bulunan C/C++ kodu oluşturma özelliği ile geçebiliyoruz. Program, ROS workspace'lerine uyarlı C++ kodu yaratımını sağlıyor.</p> <p>
-Simulink üzerinde modellemeyi gerçekleştirmek, modelin genel görünümüne daha görsel ve bütüncül bir bakış açısına sahip olmamamızı sağlamaktadır. Simulink ortamı ayrıca, veri inceleme ve hata giderimi süreçlerini bizim için kolaylaştırmaktadır.</p>
-			<div class="blog-meta">
-                    <span class="author"><i class="fas fa-user"></i> Emre Tezel</span>
-                    <span class="date"><i class="fas fa-calendar-alt"></i> 2024-05-09</span>
-                </div>
-			</div>
-        </div>
-		<div class="blog-entry image-right">
-		<img src="images/blog/002.jpg" alt="Blog Image 2">	
-			<div class="blog-text">
-            <h2>Robotik Gripper Tasarım Süreci</h2>
-			<p>Merhaba, size gripper tasarım sürecimizden biraz bahsetmek istiyorum. Öncelikle gripper, nesneleri manipüle etmeye ve yerlerini değiştirmeye yarar. Başlayalım...</p>
-            <p>Gripper v1: 
-				İlk tasarımımız, bevel gear içeren bir sistemdi. Bu sistemde, 2 dişli ve bunların arasında pinion dişli bulunuyordu. Tahrik gücü servo motor ile sağlanıyordu. Ancak, 3 boyutlu baskı alındığında pençelerin toleransları ve boyutlarında sorunlar yaşandı. Bu nedenle, tasarımı yeniden gözden geçirmek zorunda kaldık ve 2. versiyona geçtik.</p>
-<p>Gripper v2: 
-İlk versiyona kıyasla, gripper'ın boyutlandırmasını yeniden yaptık ve tasarımı %125 küçülttük. Pençeler arasına 0.3 mm tolerans verildi ve topoloji optimizasyonu yapılarak yanlarda gerekli boşluklar bırakıldı. Ancak, bevel gear sistemi nedeniyle dikey kullanım için uygun olmasına rağmen, servo motorun yer kaplaması nedeniyle aracın alt bölmesine konumlandırmada sorunlar yaşandı. Bu nedenle, yatay kullanım için 3. versiyona geçtik.</p>
-<p>Gripper v3: 
-Yeni bir tasarım stratejisi izleyerek her bir komponenti parametrik ve ayrı ayrı tasarladık. Önceki tasarımda birleşik ve bütün olarak çalışıyorduk, bu da ilerleyen aşamalarda bir şeyi düzeltmeyi zorlaştırıyordu. Bu yeni yaklaşım, tasarımı daha modüler ve esnek hale getirdi.</p>
-<p>Umarım gripper tasarlarken karşılaştığımız zorluklar ve bu zorlukların üstesinden gelme yöntemlerimizi beğenmişsinizdir :) </p>
-			<div class="blog-meta">
-                    <span class="author"><i class="fas fa-user"></i> Taner Özpınar</span>
-                    <span class="date"><i class="fas fa-calendar-alt"></i> 2024-03-29</span>
-                </div>
-			</div>
-        </div>
-        
-        <div class="blog-entry image-left">
-		<img src="images/blog/001.jpg" alt="Blog Image 2">	
-			<div class="blog-text">
-            <h2>Yeni blog sayfası!</h2>
-            <p>Merhaba, sitemize bir blog sayfası eklemeye karar verdik. Burada aracımızın gelişim sürecini sizlerle paylaşacağız. Ne yazık ki dinamik web sayfası kullanmak bizim için bir opsiyon değil, bundan dolayı yeni bir blog yazısı eklemek istediğimizde doğrudan sayfanın kodunu modifiye etmemiz gerekiyor. Gelecekte görüşme dileğiyle :)</p>
-			<div class="blog-meta">
-                    <span class="author"><i class="fas fa-user"></i> Kayra Pamukçu</span>
-                    <span class="date"><i class="fas fa-calendar-alt"></i> 2024-03-05</span>
-                </div>
-			</div>
-        </div>
-        
-    </div>
-</section>
+        </section>
 		<!-- Blog End -->
 		
         <!-- Footer Start -->
@@ -344,6 +226,7 @@ Yeni bir tasarım stratejisi izleyerek her bir komponenti parametrik ve ayrı ay
         <script src="lib/owlcarousel/owl.carousel.min.js"></script>
         <script src="lib/parallax/parallax.min.js"></script>
         <script src="js/custom/navbar.js"></script>
+        <script src="js/blog-loader.js"></script>
     </body>
 
 </html>
