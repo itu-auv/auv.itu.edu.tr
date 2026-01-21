@@ -62,7 +62,7 @@ document.addEventListener('DOMContentLoaded', () => {
             return;
         }
 
-        filteredPosts.forEach(post => {
+        filteredPosts.forEach((post, index) => {
             const card = document.createElement('div');
             // Check if image exists, otherwise use a placeholder or style differently
             // Note: In a real app we might check if file exists, here we verify if string is not empty
@@ -76,6 +76,9 @@ document.addEventListener('DOMContentLoaded', () => {
             const summary = textContent.length > 150 ? textContent.substring(0, 150) + '...' : textContent;
 
             card.className = 'blog-card';
+            // Staggered animation delay (max 1s to avoid too long waits)
+            card.style.animationDelay = `${Math.min(index * 0.1, 1)}s`;
+            
             card.innerHTML = `
                 <div class="blog-card-image">
                     <img src="${imageUrl}" alt="${post.title}" onerror="this.src='images/logo/auvLogo.png'">
@@ -136,10 +139,17 @@ document.addEventListener('DOMContentLoaded', () => {
         const modalHtml = `
             <div class="blog-modal-overlay" onclick="closeBlogModal()">
                 <div class="blog-modal-content" onclick="event.stopPropagation()">
-                    <span class="close-modal" onclick="closeBlogModal()">&times;</span>
-                    <img src="${post.image || 'images/logo/auvLogo.png'}" class="modal-img" onerror="this.src='images/logo/auvLogo.png'">
+                    <div class="modal-hero">
+                        <img src="${post.image || 'images/logo/auvLogo.png'}" class="modal-hero-img" onerror="this.src='images/logo/auvLogo.png'">
+                        <div class="modal-hero-overlay"></div>
+                    </div>
                     <div class="modal-body">
-                        <h2>${post.title}</h2>
+                        <div class="modal-header-row">
+                            <h2>${post.title}</h2>
+                            <button class="close-modal-minimal" onclick="closeBlogModal()">
+                                <i class="fas fa-times"></i>
+                            </button>
+                        </div>
                         <div class="modal-meta">
                             <span><i class="fas fa-user"></i> ${post.author}</span>
                             <span><i class="fas fa-calendar-alt"></i> ${post.date}</span>
@@ -158,14 +168,40 @@ document.addEventListener('DOMContentLoaded', () => {
         modalContainer.id = 'active-blog-modal';
         modalContainer.innerHTML = modalHtml;
         document.body.appendChild(modalContainer);
-        document.body.style.overflow = 'hidden'; // Prevent background scrolling
+        document.body.style.overflow = 'hidden';
+        
+        // Parallax scroll effect with fade-out
+        const modalContent = modalContainer.querySelector('.blog-modal-content');
+        const heroSection = modalContainer.querySelector('.modal-hero');
+        const heroImg = modalContainer.querySelector('.modal-hero-img');
+        if (modalContent && heroImg && heroSection) {
+            const heroHeight = heroSection.offsetHeight || 400;
+            modalContent.addEventListener('scroll', () => {
+                const scrollTop = modalContent.scrollTop;
+                // Parallax movement
+                heroImg.style.transform = `translateY(${scrollTop * 0.4}px)`;
+                // Fade out: fully visible at 0, fully hidden at heroHeight
+                const opacity = Math.max(0, 1 - (scrollTop / heroHeight));
+                heroSection.style.opacity = opacity;
+            });
+        }
     };
 
     window.closeBlogModal = function() {
         const modal = document.getElementById('active-blog-modal');
         if (modal) {
-            modal.remove();
-            document.body.style.overflow = 'auto'; // Restore scrolling
+            const overlay = modal.querySelector('.blog-modal-overlay');
+            if (overlay) {
+                overlay.classList.add('closing');
+                // Wait for animation to complete, then remove
+                setTimeout(() => {
+                    modal.remove();
+                    document.body.style.overflow = 'auto';
+                }, 300); // Match CSS animation duration
+            } else {
+                modal.remove();
+                document.body.style.overflow = 'auto';
+            }
         }
     };
 });

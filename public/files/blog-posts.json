@@ -1,6 +1,6 @@
 [
   {
-    "id": 9,
+    "id": 10,
     "title": "Küçük Bir Vida, Büyük Bir Ders: ESC Kartımız Neden Yandı?",
     "author": "Mehmet Erkılıç",
     "date": "2025-04-11",
@@ -10,7 +10,7 @@
     "slug": "esc-karti-neden-yandi"
   },
   {
-    "id": 8,
+    "id": 9,
     "title": "Taluy Mini Gömülü Yazılımdaki Gelişmeler",
     "author": "Taşkın Ökmen",
     "date": "2025-03-08",
@@ -20,7 +20,7 @@
     "slug": "taluy-mini-gomulu-yazilim"
   },
   {
-    "id": 7,
+    "id": 8,
     "title": "Expansion Kartı: Bir Hata, Bir Gelişim",
     "author": "Ravza Betül Karakaş",
     "date": "2025-02-15",
@@ -28,6 +28,16 @@
     "image": "images/blog/009.jpg",
     "content": "<p>Aracımızda kartlar arası iletişimi CAN Bus protokolüyle sağlıyoruz. Takım olarak, sistemin ihtiyaçlarına göre özel olarak tasarladığımız kartlarımızda CAN transceiver'ları gömülü olarak kullanıyoruz. Bu sayede kartlar arası haberleşmeyi güvenli ve kararlı bir şekilde sağlayabiliyoruz. Ancak sistemin bir diğer bileşeni olan Jetson'da doğrudan CAN transceiver desteği bulunmadığı için, Jetson ile araç kartları arasında köprü görevi gören bir expansion kartı tasarladık. Expansion kartı CAN sinyallerini alarak rosserial ile Jetson'a iletmekte. Böylece Jetson, diğer sistem modülleriyle sorunsuz şekilde iletişim kurabiliyor.</p><p>Bu sistemde her şey sorunsuz ilerliyordu, ta ki havuz testinden önceki hazırlıklarda expansion kartı Jetson'a yanlış yönde takılana kadar. Bu hata, kartın üzerindeki çipin yanmasına neden oldu.</p><p>Yaşanan bu talihsizlik sonrası yalnızca hasarlı kartı onarmakla kalmayıp, mevcut tasarımı da gözden geçirme kararı aldık. Bu süreçte, daha önce kullandığımız STM32F103 çipi yerine, daha güçlü ve hızlı olan STM32F446 çipine geçiyoruz. Bu yeni çip, hem işlem gücü hem de çevresel donanım desteği açısından bize daha fazla esneklik sunacak. </p>",
     "slug": "expansion-karti-hata-gelisim"
+  },
+    {
+    "id": 7,
+    "title": "Bir Masada Buluşan Su Altı Takımları",
+    "author": "Zeynep Demirbaş",
+    "date": "2025-02-10",
+    "sub_team": "Organizasyon",
+    "image": "images/blog/blog_zeynep_tr.jpeg",
+    "content": "<p>İTÜ AUV Takımı olarak okulumuz kampüsünde, ülkemizde su altı alanında çalışmalar yürüten lise ve üniversite takımlarını bir kahvaltı etkinliğinde bir araya getirdik.</p><p>Bu etkinliği düzenlerken amacımız; su altı alanında çalışan öğrencilerin tanışmasını, deneyimlerini paylaşmasını ve birbirleriyle dayanışma içinde olabilecekleri bir iletişim ağı oluşturmayı sağlamaktı.</p><p>Samimi bir kahvaltı ortamında başlayan etkinlik, takımların kendi araçları ve yaşadıkları süreçler üzerine sohbetleriyle devam etti. Ardından atölyemize geçerek araçlar üzerinde daha teknik ve birebir paylaşımlar yaptık. Günün ilerleyen saatlerinde oynadığımız su altı temalı oyunlar ise ortamı daha da sıcak hale getirdi.</p><p>Organizasyon ekibi olarak bu süreçte; takımlara ulaşma, etkinliği planlama ve sonrasında iletişimi sürdürme görevlerini üstlendik. Etkinlik sonunda tüm katılımcıların yer aldığı bir WhatsApp grubu oluşturarak bu iletişimin etkinlik sonrasında da devam etmesini sağladık.</p><p>Bu buluşma, bizim için sadece bir etkinlik değil; su altı alanında çalışan öğrenciler arasında canlı bir komünitenin oluşmasına atılan küçük ama değerli bir adımdı.</p>",
+    "slug": "bir-masada-bulusan-su-alti-takimlari"
   },
   {
     "id": 6,
