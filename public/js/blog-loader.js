@@ -20,6 +20,32 @@ document.addEventListener('DOMContentLoaded', () => {
     let activeYear = 'all';
     let searchQuery = '';
 
+    // Helper function to parse content (markdown or HTML)
+    function parseContent(content) {
+        if (!content) return '';
+        
+        // Check if content looks like HTML (starts with < or contains common HTML tags)
+        const isHtml = /^<[^>]+>/.test(content.trim()) || /<(p|div|h[1-6]|ul|ol|li|pre|code|span|br|hr)\b/i.test(content);
+        
+        if (isHtml) {
+            // Content is already HTML, return as-is
+            return content;
+        }
+        
+        // Content appears to be markdown, parse it with marked.js
+        if (typeof marked !== 'undefined') {
+            // Configure marked for safe rendering
+            marked.setOptions({
+                breaks: true,  // Convert \n to <br>
+                gfm: true      // GitHub Flavored Markdown
+            });
+            return marked.parse(content);
+        }
+        
+        // Fallback: wrap plain text in paragraph tags
+        return '<p>' + content.replace(/\n\n/g, '</p><p>').replace(/\n/g, '<br>') + '</p>';
+    }
+
     // Fetch posts
     fetch(jsonPath)
         .then(response => response.json())
@@ -69,9 +95,10 @@ document.addEventListener('DOMContentLoaded', () => {
             // We use a default logo if image is missing/empty
             const imageUrl = post.image && post.image.trim() !== '' ? post.image : 'images/logo/auvLogo.png';
             
-            // Truncate content for summary (strip HTML tags first)
+            // Truncate content for summary (strip HTML/markdown tags first)
+            const renderedContent = parseContent(post.content);
             const tempDiv = document.createElement('div');
-            tempDiv.innerHTML = post.content;
+            tempDiv.innerHTML = renderedContent;
             const textContent = tempDiv.textContent || tempDiv.innerText || '';
             const summary = textContent.length > 150 ? textContent.substring(0, 150) + '...' : textContent;
 
@@ -153,10 +180,10 @@ document.addEventListener('DOMContentLoaded', () => {
                         <div class="modal-meta">
                             <span><i class="fas fa-user"></i> ${post.author}</span>
                             <span><i class="fas fa-calendar-alt"></i> ${post.date}</span>
-                            <span class="badge bg-primary">${post.sub_team || texts.general}</span>
+                            <span class="blog-category-badge ${getCategoryClass(post.sub_team)}">${post.sub_team || texts.general}</span>
                         </div>
-                        <div class="modal-text">
-                            ${post.content}
+                        <div class="modal-text markdown-content">
+                            ${parseContent(post.content)}
                         </div>
                     </div>
                 </div>

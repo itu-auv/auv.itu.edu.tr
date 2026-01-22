@@ -725,11 +725,21 @@
     font-weight: bold;
 }
 
-.cat-software { background: #007bff; }
-.cat-electronics { background: #28a745; }
-.cat-mechanic { background: #ffc107; color: black;}
-.cat-org { background: #dc3545; }
-.cat-general { background: #6c757d; }
+/* Category colors using team palette */
+.cat-software { background: #275D73; } /* Dark teal - primary brand color */
+.cat-electronics { background: #000000; } /* Black */
+.cat-mechanic { background: #A4B3BF; color: #000000; } /* Light gray-blue */
+.cat-org { background: #275D73; border: 2px solid #A4B3BF; } /* Dark teal with accent border */
+.cat-general { background: #A4B3BF; color: #000000; } /* Light gray-blue */
+
+/* Badge style for modal sub_team */
+.blog-category-badge {
+    padding: 4px 12px;
+    border-radius: 4px;
+    font-size: 0.85rem;
+    color: white;
+    font-weight: 500;
+}
 
 .blog-card-content {
     padding: 20px;
@@ -911,6 +921,119 @@
 .modal-text p {
     margin-bottom: 15px;
     color: #ddd;
+}
+
+/* Markdown content styles */
+.markdown-content h1,
+.markdown-content h2,
+.markdown-content h3,
+.markdown-content h4,
+.markdown-content h5,
+.markdown-content h6 {
+    color: #fff;
+    margin-top: 1.5em;
+    margin-bottom: 0.75em;
+    font-weight: 600;
+}
+
+.markdown-content h1 { font-size: 1.8rem; }
+.markdown-content h2 { font-size: 1.5rem; border-bottom: 1px solid #444; padding-bottom: 0.3em; }
+.markdown-content h3 { font-size: 1.25rem; }
+.markdown-content h4 { font-size: 1.1rem; }
+
+/* Code blocks */
+.markdown-content pre {
+    background: #1a1a1a;
+    border: 1px solid #333;
+    border-radius: 8px;
+    padding: 16px;
+    overflow-x: auto;
+    margin: 1em 0;
+}
+
+.markdown-content pre code {
+    background: transparent;
+    padding: 0;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9rem;
+    color: #A4B3BF;
+    line-height: 1.5;
+}
+
+/* Inline code */
+.markdown-content code {
+    background: rgba(39, 93, 115, 0.3);
+    color: #A4B3BF;
+    padding: 2px 6px;
+    border-radius: 4px;
+    font-family: 'Consolas', 'Monaco', 'Courier New', monospace;
+    font-size: 0.9em;
+}
+
+/* Blockquotes */
+.markdown-content blockquote {
+    border-left: 4px solid #275D73;
+    margin: 1em 0;
+    padding: 0.5em 1em;
+    background: rgba(39, 93, 115, 0.1);
+    color: #bbb;
+}
+
+.markdown-content blockquote p {
+    margin: 0;
+}
+
+/* Lists */
+.markdown-content ul,
+.markdown-content ol {
+    margin: 1em 0;
+    padding-left: 2em;
+    color: #ddd;
+}
+
+.markdown-content li {
+    margin-bottom: 0.5em;
+}
+
+/* Links */
+.markdown-content a {
+    color: #A4B3BF;
+    text-decoration: underline;
+    transition: color 0.2s;
+}
+
+.markdown-content a:hover {
+    color: #fff;
+}
+
+/* Tables */
+.markdown-content table {
+    width: 100%;
+    border-collapse: collapse;
+    margin: 1em 0;
+}
+
+.markdown-content th,
+.markdown-content td {
+    border: 1px solid #444;
+    padding: 8px 12px;
+    text-align: left;
+}
+
+.markdown-content th {
+    background: #275D73;
+    color: #fff;
+}
+
+.markdown-content tr:nth-child(even) {
+    background: rgba(255, 255, 255, 0.05);
+}
+
+/* Horizontal rule */
+.markdown-content hr {
+    border: none;
+    border-top: 1px solid #444;
+    margin: 2em 0;
 }
 
 @media (max-width: 991px) {
