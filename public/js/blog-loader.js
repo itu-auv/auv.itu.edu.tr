@@ -212,6 +212,11 @@ document.addEventListener('DOMContentLoaded', () => {
                 heroSection.style.opacity = opacity;
             });
         }
+        
+        // Trigger syntax highlighting for code blocks
+        if (typeof Prism !== 'undefined') {
+            Prism.highlightAllUnder(modalContainer);
+        }
     };
 
     window.closeBlogModal = function() {
