@@ -728,7 +728,7 @@
 /* Category colors using team palette */
 .cat-software { background: #275D73; } /* Dark teal - primary brand color */
 .cat-electronics { background: #000000; } /* Black */
-.cat-mechanic { background: #A4B3BF; color: #000000; } /* Light gray-blue */
+.cat-mechanic { background: #A4B3BF; color: #FFFFFF; } /* Light gray-blue */
 .cat-org { background: #275D73; border: 2px solid #A4B3BF; } /* Dark teal with accent border */
 .cat-general { background: #A4B3BF; color: #000000; } /* Light gray-blue */
 
