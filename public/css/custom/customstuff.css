@@ -520,6 +520,10 @@
     background: var(--light);
 }
 
+.service-item:hover .service-text .btn-square img {
+    filter: brightness(0) invert(1);
+}
+
 .service-item .service-text .btn {
     width: 31px;
     height: 31px;
@@ -1104,7 +1108,7 @@
 }
 
 .team-item .team-social .btn:hover {
-    color: #FFFFFF;
+    color: var(--dark);
     background: var(--primary);
 }
 
