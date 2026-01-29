@@ -131,7 +131,7 @@ document.addEventListener('DOMContentLoaded', () => {
         if (cat === 'yazılım' || cat === 'software') return 'cat-software';
         if (cat === 'elektronik' || cat === 'electronics') return 'cat-electronics';
         if (cat === 'mekanik' || cat === 'mechanic' || cat === 'mechanics') return 'cat-mechanic';
-        if (cat === 'organizasyon' || cat === 'organization') return 'cat-org';
+        if (cat === 'organizasyon' || cat === 'organization' || cat === 'iş geliştirme ve operasyon' || cat === 'business operations') return 'cat-org';
         
         return 'cat-general';
     }
